@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React, { useState } from 'react';
 import './FiveFive.css'
 
 const matrix5x5 = [
@@ -12,7 +11,30 @@ const matrix5x5 = [
 
 const Fivefive = () => {
   return (
+
+    
     <div>
+
+<button onClick={toggleColor}>Toggle Color</button>
+      <table>
+        <tbody>
+          {Array.from({ length: 5 }).map((_, row) => (
+            <tr key={row}>
+              {Array.from({ length: 5 }).map((_, col) => {
+                const index = row * 5 + col;
+                let color = showGreen && index < words.length ? 'green' : 'black';
+                return (
+                  <td key={col} style={{ color }}>
+                    {words[index] || ''}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+
       <div className="0" class="row">
         <div className="box" id="00"><p>{matrix5x5[0][0]}</p></div>
         <div className="box" id="01"><p>{matrix5x5[0][1]}</p></div>
