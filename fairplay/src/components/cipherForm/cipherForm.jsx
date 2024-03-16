@@ -12,7 +12,7 @@ function CipherForm() {
 	const [showEmptyCipher, setShowEmptyCipher] = useState(true);
 
 	const handlePlainTextChange = (e) => {
-		setPlainText(e.target.value);
+		setPlainText(e.target.value.replace(/\s/g, ""));
 	};
 
 	const handleKeyChange = (e) => {
