@@ -1,26 +1,25 @@
 /* FilterInputText.module.css */
 .grid_input_text {
-    display: flex;
-    flex-direction: row;
-    background: rgb(255, 124, 124);
-  }
-  
-  .substring {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 50px;
-    border: 2px solid black;
-  }
-  
-  .green {
-    color: green;
-  }
-  
-  .black {
-    color: black;
-  }
-  
-  
+	display: flex;
+	flex-direction: row;
+	background: rgb(255, 124, 124);
+	width: min-content;
+}
+
+.substring {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	height: 30px;
+	width: 50px;
+	border: 2px solid black;
+}
+
+.green {
+	color: green;
+}
+
+.black {
+	color: black;
+}
