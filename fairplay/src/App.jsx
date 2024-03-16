@@ -3,12 +3,14 @@ import React from "react";
 import "./App.css";
 import CipherForm from "./components/cipherForm/cipherForm";
 
+import RadioToggle from "./components/RadioToggle/RadioToggle";
+
 function App() {
 	return (
 		<div className="App">
-			<h1>Playfair Cipher</h1>
-			<CipherForm />
-			<br />
+
+      <RadioToggle />
+
 		</div>
 	);
 }
