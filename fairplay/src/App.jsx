@@ -1,16 +1,17 @@
 // src/App.js
 import React from "react";
 import "./App.css";
-import CipherForm from "./components/cipherForm";
-import Fivefive from "./components/FiveFive/Fivefive";
 
-import RadioToggle from "./components/RadioToggle/RadioToggle";
+import FilterInputText from "./components/FilterInputText/FilterInputText";
+
 
 function App() {
 	return (
 		<div className="App">
+			
+			<h1>Meow</h1>
 
-      <RadioToggle />
+			<FilterInputText inputString={"Meowsies"}/>
 
 		</div>
 	);

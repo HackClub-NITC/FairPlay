@@ -5,7 +5,7 @@ import './styles.css';
 const RadioEncrypt = () => {
   return (
     <div>
-      <h1>Enccrypt</h1>
+      <h1>Encrypt</h1>
     </div>
   )
 }
