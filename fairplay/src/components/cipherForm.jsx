@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Fivefive from "./FiveFiveStatic/FiveFiveStatic";
+import FivefiveStaric from "./FiveFiveStatic/FiveFiveStatic";
 
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
@@ -191,7 +191,9 @@ function CipherForm() {
 			</form>
 
 			{/* Display the encrypted text */}
+
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
+
 		</div>
 	);
 }
