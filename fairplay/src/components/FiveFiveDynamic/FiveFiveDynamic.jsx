@@ -43,7 +43,7 @@ const FiveFiveDynamic = () => {
 			setModifiedCipherText(filteredInputString);
 			setStep(1);
 		} else if (step === 1) {
-			setKey(filteredInputString);
+			setKey(key);
 			setStep(2);
 			setSubstrings(splitString(filteredInputString));
 		} else if (step > 1 && step <= 2 + substrings.length) {
