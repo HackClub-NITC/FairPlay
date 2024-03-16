@@ -36,6 +36,7 @@ const FiveFiveStatic = ({ cipherText }) => {
 		<div>
 			{matrix5x5.map((row, i) => (
 				<div key={i} className={`row ${i}`}>
+
 					{row.map((_, j) => (
 						<div
 							key={j}

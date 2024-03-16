@@ -5,6 +5,7 @@ function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
 	const [cipherText, setCipherText] = useState("");
+	const [showEmptyCipher, setShowEmptyCipher] = useState(true);
 
 	const handlePlainTextChange = (e) => {
 		setPlainText(e.target.value);
@@ -157,9 +158,26 @@ function CipherForm() {
 		setCipherText(encryptByPlayfairCipher(plainText, key));
 	};
 
+	const handlePopulateCipher = () => {
+		setShowEmptyCipher(false); // Hide the empty cipher
+	};
+
 	return (
 		<div>
 			<form onSubmit={handleSubmit}>
+				<div>
+					<label htmlFor="key">Key:</label>
+					<input type="text" id="key" value={key} onChange={handleKeyChange} />
+				</div>
+				{/* <button type="button" onClick={handlePopulateCipher}>
+					Populate Cipher with Key																			optional
+				</button> */}
+				<br />
+				{showEmptyCipher && <Fivefive />}{" "}
+				{/* Show empty cipher if not populated */}
+				{!showEmptyCipher && <Fivefive cipherText={key} />}{" "}
+				{/* Show cipher with key if populated */}
+				<br />
 				<div>
 					<label htmlFor="plainText">Plain Text:</label>
 					<input
@@ -169,18 +187,13 @@ function CipherForm() {
 						onChange={handlePlainTextChange}
 					/>
 				</div>
-				<div>
-					<label htmlFor="key">Key:</label>
-					<input type="text" id="key" value={key} onChange={handleKeyChange} />
-				</div>
 				<button type="submit">Submit</button>
 			</form>
 
 			{/* Display the encrypted text */}
-			{cipherText && <div>Cipher Text: {cipherText}</div>}
 
-			{/* Render the Fivefive component and pass cipherText as a prop */}
-			{/* {cipherText && <FivefiveStatic cipherText={cipherText} />} */}
+			{cipherText && <div>Encrypted Text: {cipherText}</div>}
+
 		</div>
 	);
 }
