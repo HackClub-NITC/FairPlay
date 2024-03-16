@@ -13,7 +13,7 @@ const FiveFiveDynamic = () => {
 	const [key, setKey] = useState("");
 	const [inputString, setInputString] = useState("");
 	const [substrings, setSubstrings] = useState([]);
-	const [encryptedSubstrings, setEncryptedSubstrings] = useState([]);
+	const [encryptedSubstrings, setEncryptedSubstrings] = useState("");
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
@@ -61,6 +61,16 @@ const FiveFiveDynamic = () => {
 			// Update the condition here
 			setStep(step - 1); // Decrease step if it's greater than 0 and not 2
 		}
+	};
+
+	// Function to handle the "Reset" button click
+	const handleResetClick = () => {
+		setStep(0);
+		setModifiedCipherText("");
+		setKey("");
+		setInputString("");
+		setSubstrings([]);
+		setEncryptedSubstrings([]);
 	};
 
 	// Function to filter the input string
@@ -154,10 +164,11 @@ const FiveFiveDynamic = () => {
 					</div>
 				</>
 			)}
-
 			<br />
 			<button onClick={handleBackClick}>Back</button>
 			<button onClick={handleNextClick}>Next</button>
+			<button onClick={handleResetClick}>Reset</button>{" "}
+			{/* Added reset button */}
 		</div>
 	);
 };
