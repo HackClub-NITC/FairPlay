@@ -7,14 +7,16 @@ import FilterInputText from "./components/FilterInputText/FilterInputText";
 import CipherForm from "./components/cipherForm/cipherForm";
 import StepSlideShow from "./components/StepSlideShow/StepSlideShow";
 import FiveFiveDynamic from "./components/FiveFiveDynamic/FiveFiveDynamic";
+import Chatbot from "./components/ChatBox/Chatbot";
 // import RadioToggle from "./components/RadioToggle/RadioToggle";
 // import Navbar from "./components/Navbar/Navbar";
 
 function App() {
 	return (
 		<div className="App">
-			<CipherForm />
-			<FiveFiveDynamic />
+			{/* <CipherForm />
+			<FiveFiveDynamic /> */}
+			<Chatbot />
 		</div>
 	);
 }

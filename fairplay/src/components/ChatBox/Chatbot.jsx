@@ -1,77 +1,84 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import config from './config.json';
+import React, { useState } from "react";
+import axios from "axios";
 import "./Chatbot.css";
 
 const Chatbot = () => {
-  const [input, setInput] = useState('');
-  const [messages, setMessages] = useState([]);
+	const [input, setInput] = useState("");
+	const [messages, setMessages] = useState([]);
 
-  const chatWithGPT3 = async (userInput) => {
-    const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
-    const headers = {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${config.OPENAI_API_KEY}`
-    };
+	const chatGptResponse = async (userInput) => {
+		const apiEndpoint = "https://api.openai.com/v1/chat/completions";
+		const headers = {
+			"Content-Type": "application/json",
+			Authorization: `Bearer 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`,
+		};
 
-    const data = {
-      prompt: userInput,
-      max_tokens: 150,
-      model: "gpt-3.5-turbo"
-    };
+		const data = {
+			messages: [
+				{
+					role: "system",
+					content:
+						"You are Charles Wheatstone, inventor of the playfair cipher. You will deviate all conversation to the cipher and you will give all the details about the cipher",
+				},
+				{ role: "user", content: userInput },
+			],
+			model: "gpt-3.5-turbo",
+		};
 
-    try {
-      const response = await axios.post(apiEndpoint, data, { headers });
-      return response.data.choices[0].text.trim();
-    } catch (error) {
-      if (error.response) {
-        console.error('API Error Status:', error.response.status);
-        console.error('API Error Data:', error.response.data);
-      } else if (error.request) {
-        console.error('No API Response:', error.request);
-      } else {
-        console.error('Request Error:', error.message);
-      }
-      return '';
-    }
-  };
+		try {
+			const response = await axios.post(apiEndpoint, data, { headers });
+			console.log("API response:", response.data);
+			if (
+				response.data.choices &&
+				response.data.choices[0] &&
+				response.data.choices[0].message &&
+				response.data.choices[0].message.content
+			) {
+				return response.data.choices[0].message.content.trim();
+			} else {
+				console.error("Unexpected API response:", response.data);
+				return "";
+			}
+		} catch (error) {
+			console.error("Error:", error);
+			return "";
+		}
+	};
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-    const userMessage = { text: input, user: true };
-    setMessages((prevMessages) => [...prevMessages, userMessage]);
-    const aiMessage = { text: '...', user: false };
-    setMessages((prevMessages) => [...prevMessages, aiMessage]);
-    const response = await chatWithGPT3(input);
-    const newAiMessage = { text: response, user: false };
-    setMessages((prevMessages) => [...prevMessages.slice(0, -1), newAiMessage]);
-    setInput('');
-  };
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		if (!input.trim()) return; // Ensure input is not empty
+		console.log("User input:", input); // Log the user input
+		const response = await chatGptResponse(input.trim()); // Trim input before passing to chatGptResponse
+		setMessages([{ text: response, user: false }]);
+		setInput("");
+	};
 
-  return (
-    <div className="chatbot-container">
-      <div className="chatbot-messages">
-        {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`message ${message.user ? 'user-message' : 'ai-message'}`}
-          >
-            {message.text}
-          </div>
-        ))}
-      </div>
-      <form className="chatbot-input-form" onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your message..."
-        />
-        <button type="submit">Send</button>
-      </form>
-    </div>
-  );
+	return (
+		<div className="chatbot-container">
+			<div className="chatbot-messages">
+				{messages.map((message, index) => (
+					<div
+						key={index}
+						className={`message ${
+							message.user ? "user-message" : "ai-message"
+						}`}
+					>
+						{message.text}
+					</div>
+				))}
+			</div>
+			<form className="chatbot-input-form" onSubmit={handleSubmit}>
+				<input
+					type="text"
+					value={input}
+					onChange={(e) => setInput(e.target.value)}
+					placeholder="Type your message..."
+				/>
+				<button type="submit">Send</button>
+			</form>
+		</div>
+	);
 };
 
 export default Chatbot;
