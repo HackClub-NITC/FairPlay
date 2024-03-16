@@ -13,6 +13,18 @@ const FiveFiveStatic = ({ cipherText }) => {
 	// Convert the cipher text to uppercase and replace 'J' with 'I'
 	let modifiedCipherText = cipherText.toUpperCase().replace(/J/g, "I");
 
+	modifiedCipherText = removeDuplicates(modifiedCipherText);
+
+	function removeDuplicates(str) {
+		let uniqueChars = "";
+		for (let char of str) {
+			if (!uniqueChars.includes(char)) {
+				uniqueChars += char;
+			}
+		}
+		return uniqueChars;
+	}
+
 	// Create a hash to keep track of letters used
 	const hash = {};
 
