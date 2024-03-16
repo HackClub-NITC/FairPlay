@@ -29,6 +29,10 @@ const FiveFiveDynamic = () => {
 	const handleNextClick = () => {
 		let filteredInputString = filterString(inputString).toUpperCase();
 
+		if (isPlaying) {
+			setIsPlaying(false);
+		}
+
 		if (step === 0) {
 			setModifiedCipherText(filteredInputString);
 			setStep(1);
@@ -48,7 +52,6 @@ const FiveFiveDynamic = () => {
 			// Handle any additional steps here
 		}
 
-		// Encrypt the modifiedCipherText when step 0 is completed
 		if (step === 0) {
 			const encryptedText = encryptByPlayfairCipher(
 				inputString,
@@ -61,8 +64,28 @@ const FiveFiveDynamic = () => {
 		}
 	};
 
+	const handlePlayToggle = () => {
+		const nextIsPlaying = !isPlaying; // Get the next isPlaying state
+		setIsPlaying(nextIsPlaying); // Update the isPlaying state
+
+		if (!nextIsPlaying) {
+			// If paused, clear the timer
+			clearInterval(timerRef.current);
+		} else {
+			// If playing, start the timer
+			timerRef.current = setInterval(() => {
+				// Call handleNextClick every 1 second
+				handleNextClick();
+			}, 1000);
+		}
+	};
+
 	// Function to handle the "Back" button click
 	const handleBackClick = () => {
+		if (isPlaying) {
+			setIsPlaying(false);
+		}
+
 		if (step > 0 && step !== 2) {
 			// Update the condition here
 			setStep(step - 1); // Decrease step if it's greater than 0 and not 2
@@ -94,20 +117,6 @@ const FiveFiveDynamic = () => {
 			substrings.push(str.slice(i, i + 2));
 		}
 		return substrings;
-	};
-
-	// Function to handle the play/pause button click
-	const handlePlayToggle = () => {
-		setIsPlaying(!isPlaying); // Toggle the play/pause state
-		if (!isPlaying) {
-			// If playing, start the timer
-			timerRef.current = setInterval(() => {
-				handleNextClick(); // Call handleNextClick every 1 seconds
-			}, 1000); // Change to 3000 milliseconds for 3 seconds interval
-		} else {
-			// If paused, clear the timer
-			clearInterval(timerRef.current);
-		}
 	};
 
 	return (

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Chatbot.css";
+import styles from "./Chatbot.module.css";
 import config from "./config";
 
 const Chatbot = () => {
@@ -77,8 +77,8 @@ const Chatbot = () => {
 	};
 
 	return (
-		<div className="chatbot-container">
-			<div className="chatbot-messages">
+		<div className={styles.chatbotContainer}>
+			<div className={styles.chatbotMessages}>
 				{messages.slice(1).map((message, index) => (
 					<div
 						key={index}
@@ -96,8 +96,11 @@ const Chatbot = () => {
 					value={input}
 					onChange={(e) => setInput(e.target.value)}
 					placeholder="Type your message..."
+					className={styles.input}
 				/>
-				<button type="submit">Send</button>
+				<button type="submit" className={styles.button}>
+					Send
+				</button>
 			</form>
 		</div>
 	);
