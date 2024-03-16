@@ -7,6 +7,7 @@ import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
 import style from "./FiveFiveDynamic.module.css";
+import './FiveFiveDynamic.module.css';
 
 const FiveFiveDynamic = () => {
 	const [step, setStep] = useState(0);
@@ -118,24 +119,37 @@ const FiveFiveDynamic = () => {
 	};
 
 	return (
-		<div>
-			<label htmlFor="inputString">Input String:</label>
-			<input
-				type="text"
-				id="inputString"
-				value={inputString}
-				onChange={handleInputChange} // Handle input change
-			/>
-			<br />
-			<br />
-			<label htmlFor="key">Key:</label>
-			<input
-				type="text"
-				id="key"
-				value={key}
-				onChange={(e) => setKey(e.target.value)}
-			/>
-			<br />
+		<div className={style.FiveFiveDynamic}>
+			<div className={style.inputbox}>
+				<label htmlFor="inputString">Input String:</label>
+				<input className={style.inputBox}
+					type="text"
+					id="inputString"
+					value={inputString}
+					onChange={handleInputChange} // Handle input change
+				/>
+
+				<label htmlFor="key">Key:</label>
+				<input className={style.inputBox}
+					type="text"
+					id="key"
+					value={key}
+					onChange={(e) => setKey(e.target.value)}
+				/>
+
+				<div className={style.button_div}>
+
+					<button className = {style.move_button}onClick={handleBackClick}>Back</button>
+					{/* <button className = {style.move_button}onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button> */}
+					<button className = {style.move_button} onClick={handleNextClick}>Next</button>
+
+					<button className = {style.move_button} onClick={handleResetClick}>Reset</button>{" "}
+					{/* Added reset button */}
+
+				</div>
+
+			</div>
+
 			{step === 0 && (
 				<>
 					<br />
@@ -200,13 +214,7 @@ const FiveFiveDynamic = () => {
 					</div>
 				</>
 			)}
-			<br />
-			<button onClick={handleBackClick}>Back</button>
-			{/* <button onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button> */}
-			<button onClick={handleNextClick}>Next</button>
-			<br />
-			<button onClick={handleResetClick}>Reset</button>{" "}
-			{/* Added reset button */}
+			
 		</div>
 	);
 };
