@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 function CPlusPlusCodeComponent() {
-    const [copied, setCopied] = useState(false);
-    const cplusCode = `// C++ program to implement Playfair Cipher
+	const [copied, setCopied] = useState(false);
+	const cplusCode = `// C++ program to implement Playfair Cipher
 
   #include <bits/stdc++.h>
   using namespace std;
@@ -177,29 +177,31 @@ function CPlusPlusCodeComponent() {
   
       return 0;
   }`;
-  const handleCopyClick = () => {
-    navigator.clipboard.writeText(cplusCode);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-  };
-  
-  return (
-    <div>
-      <label style={{ textAlign: 'left' }}>C++ Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{cplusCode}</code>
-      </pre>
-      <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
-    </div>
-  );
+	const handleCopyClick = () => {
+		navigator.clipboard.writeText(cplusCode);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
+
+	return (
+		<div>
+			<label style={{ textAlign: "left" }}>C++ Code:</label>
+			<pre style={{ textAlign: "left" }}>
+				<code>{cplusCode}</code>
+			</pre>
+			<button onClick={handleCopyClick}>
+				{copied ? "Copied!" : "Copy to Clipboard"}
+			</button>
+		</div>
+	);
 }
 
 function CCodeComponent() {
-    const [copied, setCopied] = useState(false);
-  
-    const cCode =`// C program to implement Playfair Cipher
+	const [copied, setCopied] = useState(false);
+
+	const cCode = `// C program to implement Playfair Cipher
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -375,29 +377,31 @@ int main()
 	printf("Cipher text: %s\n", str);
 
 	return 0;
-}`
-const handleCopyClick = () => {
-    navigator.clipboard.writeText(cCode);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-  };
-    
-  return (
-    <div>
-      <label style={{ textAlign: 'left' }}>C Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{cCode}</code>
-      </pre>
-      <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
-    </div>
-  );
+}`;
+	const handleCopyClick = () => {
+		navigator.clipboard.writeText(cCode);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
+
+	return (
+		<div>
+			<label style={{ textAlign: "left" }}>C Code:</label>
+			<pre style={{ textAlign: "left" }}>
+				<code>{cCode}</code>
+			</pre>
+			<button onClick={handleCopyClick}>
+				{copied ? "Copied!" : "Copy to Clipboard"}
+			</button>
+		</div>
+	);
 }
 
 function JavaCodeComponent() {
-    const [copied, setCopied] = useState(false);
-    const JavaCode=`// Java program to implement Playfair Cipher 
+	const [copied, setCopied] = useState(false);
+	const JavaCode = `// Java program to implement Playfair Cipher 
 import java.util.*;
 
 public class Solution
@@ -585,29 +589,31 @@ public static void main(String[] args) {
 }
 
 // This code is contributed by karandeep1234
-`
-const handleCopyClick = () => {
-    navigator.clipboard.writeText(JavaCode);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-  };
+`;
+	const handleCopyClick = () => {
+		navigator.clipboard.writeText(JavaCode);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
 
-  return (
-    <div>
-      <label style={{ textAlign: 'left' }}>Java Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{JavaCode}</code>
-      </pre>
-      <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
-    </div>
-  );
+	return (
+		<div>
+			<label style={{ textAlign: "left" }}>Java Code:</label>
+			<pre style={{ textAlign: "left" }}>
+				<code>{JavaCode}</code>
+			</pre>
+			<button onClick={handleCopyClick}>
+				{copied ? "Copied!" : "Copy to Clipboard"}
+			</button>
+		</div>
+	);
 }
 
 function PythonCodeComponent() {
-    const [copied, setCopied] = useState(false);
-    const PythonCode=`# Python program to implement Playfair Cipher
+	const [copied, setCopied] = useState(false);
+	const PythonCode = `# Python program to implement Playfair Cipher
 
 # Function to convert the string to lowercase
 
@@ -785,30 +791,32 @@ for i in CipherList:
 print("CipherText:", CipherText)
 
 # This code is Contributed by Boda_Venkata_Nikith
-`
+`;
 
-const handleCopyClick = () => {
-    navigator.clipboard.writeText(PythonCode);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-  };
+	const handleCopyClick = () => {
+		navigator.clipboard.writeText(PythonCode);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
 
-  return (
-    <div>
-      <label style={{ textAlign: 'left' }}>Python Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{PythonCode}</code>
-      </pre>
-      <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
-    </div>
-  );
+	return (
+		<div>
+			<label style={{ textAlign: "left" }}>Python Code:</label>
+			<pre style={{ textAlign: "left" }}>
+				<code>{PythonCode}</code>
+			</pre>
+			<button onClick={handleCopyClick}>
+				{copied ? "Copied!" : "Copy to Clipboard"}
+			</button>
+		</div>
+	);
 }
 
 function JavascriptCodeComponent() {
-    const [copied, setCopied] = useState(false);
-    const JavascriptCode=`// JavaScript program to implement Playfair Cipher
+	const [copied, setCopied] = useState(false);
+	const JavascriptCode = `// JavaScript program to implement Playfair Cipher
 
 // Function to generate the 5x5 key square
 function generateKeyTable(key, ks, keyT) {
@@ -963,107 +971,152 @@ console.log("Plain text: " + str + "<br>");
 console.log("Cipher text: " + encryptByPlayfairCipher(str, key));
 
 // This code is contributed by poojaagarwal2
-`
-const handleCopyClick = () => {
-    navigator.clipboard.writeText(JavascriptCode);
-    setCopied(true);
-    setTimeout(() => {
-      setCopied(false);
-    }, 1500);
-  };
+`;
+	const handleCopyClick = () => {
+		navigator.clipboard.writeText(JavascriptCode);
+		setCopied(true);
+		setTimeout(() => {
+			setCopied(false);
+		}, 1500);
+	};
 
-  return (
-    <div>
-      <label style={{ textAlign: 'left' }}>Javascript Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{JavascriptCode}</code>
-      </pre>
-      <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
-    </div>
-  );
+	return (
+		<div>
+			<label style={{ textAlign: "left" }}>Javascript Code:</label>
+			<pre style={{ textAlign: "left" }}>
+				<code>{JavascriptCode}</code>
+			</pre>
+			<button onClick={handleCopyClick}>
+				{copied ? "Copied!" : "Copy to Clipboard"}
+			</button>
+		</div>
+	);
 }
 
 function PlayfairCipher() {
-    const [section, setSection] = useState('cplus'); // Default section is 'cplus'
-  
-    const handleSectionChange = (newSection) => {
-      setSection(newSection);
-    };
-  
-    return (
-      <>
-        <header>
-          <h1>About PlayFair Cypher</h1>
-        </header>
-        <main>
-        <p>The Playfair cipher is a symmetric encryption technique that uses a 5x5 grid of letters to encrypt pairs of letters in plaintext.</p>
-<ol >
-  <li><strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY") and construct a 5x5 grid (ignoring duplicate letters in the keyword and excluding 'J'). Fill the grid with the remaining letters of the alphabet, omitting 'J' (e.g., using "I" instead of "J").</li>
-  <li><strong>Encryption Rules</strong>:
-    <ul >
-      <li >Replace any 'J' with 'I'.</li>
-      <li>Split the plaintext into pairs of letters (e.g., "HELLO" becomes "HE LX LO").</li>
-      <li>If both letters in a pair are the same, add an 'X' between them (e.g., "HELLO" becomes "HE LX LO").</li>
-      <li>If the pairs have an odd number of letters, add an 'X' at the end to make it even.</li>
-      <li>For each pair of letters:
-        <ul>
-          <li>If they are in the same row, replace them with the letters to their immediate right (wrapping around to the left if at the end of a row).</li>
-          <li>If they are in the same column, replace them with the letters immediately below (wrapping around to the top if at the bottom of a column).</li>
-          <li>If they form a rectangle, replace them with the letters on the same row but at the other pair of corners of the rectangle.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><strong>Decryption</strong>: To decrypt a message, reverse the process by finding the corresponding letters in the grid based on the rules above.</li>
-</ol>
-<p>The Playfair cipher was used historically for secure communication, but it is no longer considered secure against modern cryptographic attacks.</p>
-          <div style={{ marginBottom: '3rem' }}>
-            <nav className="container-btn">
-              <button onClick={() => handleSectionChange('cplus')}>C++</button>
-              <button onClick={() => handleSectionChange('c')}>C</button>
-              <button onClick={() => handleSectionChange('java')}>Java</button>
-              <button onClick={() => handleSectionChange('python')}>Python3</button>
-              <button onClick={() => handleSectionChange('js')}>JavaScript</button>
-            </nav>
-          </div>
-          {section === 'cplus' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <CPlusPlusCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'c' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <CCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'java' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <JavaCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'python' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <PythonCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'js' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <JavascriptCodeComponent />
-              </div>
-            </section>
-          )}
-        </main>
-      </>
-    );
-  }
-  
-  export default PlayfairCipher;
+	const [section, setSection] = useState("cplus"); // Default section is 'cplus'
+
+	const handleSectionChange = (newSection) => {
+		setSection(newSection);
+	};
+
+	return (
+		<>
+			<header>
+				<h1>About PlayFair Cypher</h1>
+			</header>
+			<main>
+				<p>
+					The Playfair cipher is a symmetric encryption technique that uses a
+					5x5 grid of letters to encrypt pairs of letters in plaintext.
+				</p>
+				<ol>
+					<li>
+						<strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY") and
+						construct a 5x5 grid (ignoring duplicate letters in the keyword and
+						excluding 'J'). Fill the grid with the remaining letters of the
+						alphabet, omitting 'J' (e.g., using "I" instead of "J").
+					</li>
+					<li>
+						<strong>Encryption Rules</strong>:
+						<ul>
+							<li>Replace any 'J' with 'I'.</li>
+							<li>
+								Split the plaintext into pairs of letters (e.g., "HELLO" becomes
+								"HE LX LO").
+							</li>
+							<li>
+								If both letters in a pair are the same, add an 'X' between them
+								(e.g., "HELLO" becomes "HE LX LO").
+							</li>
+							<li>
+								If the pairs have an odd number of letters, add an 'X' at the
+								end to make it even.
+							</li>
+							<li>
+								For each pair of letters:
+								<ul>
+									<li>
+										If they are in the same row, replace them with the letters
+										to their immediate right (wrapping around to the left if at
+										the end of a row).
+									</li>
+									<li>
+										If they are in the same column, replace them with the
+										letters immediately below (wrapping around to the top if at
+										the bottom of a column).
+									</li>
+									<li>
+										If they form a rectangle, replace them with the letters on
+										the same row but at the other pair of corners of the
+										rectangle.
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li>
+						<strong>Decryption</strong>: To decrypt a message, reverse the
+						process by finding the corresponding letters in the grid based on
+						the rules above.
+					</li>
+				</ol>
+				<p>
+					The Playfair cipher was used historically for secure communication,
+					but it is no longer considered secure against modern cryptographic
+					attacks.
+				</p>
+				<div style={{ marginBottom: "3rem" }}>
+					<nav className="container-btn">
+						<button onClick={() => handleSectionChange("cplus")}>C++</button>
+						<button onClick={() => handleSectionChange("c")}>C</button>
+						<button onClick={() => handleSectionChange("java")}>Java</button>
+						<button onClick={() => handleSectionChange("python")}>
+							Python3
+						</button>
+						<button onClick={() => handleSectionChange("js")}>
+							JavaScript
+						</button>
+					</nav>
+				</div>
+				{section === "cplus" && (
+					<section id="encryptSection" className="">
+						<div className="result">
+							<CPlusPlusCodeComponent />
+						</div>
+					</section>
+				)}
+				{section === "c" && (
+					<section id="encryptSection" className="">
+						<div className="result">
+							<CCodeComponent />
+						</div>
+					</section>
+				)}
+				{section === "java" && (
+					<section id="encryptSection" className="">
+						<div className="result">
+							<JavaCodeComponent />
+						</div>
+					</section>
+				)}
+				{section === "python" && (
+					<section id="encryptSection" className="">
+						<div className="result">
+							<PythonCodeComponent />
+						</div>
+					</section>
+				)}
+				{section === "js" && (
+					<section id="encryptSection" className="">
+						<div className="result">
+							<JavascriptCodeComponent />
+						</div>
+					</section>
+				)}
+			</main>
+		</>
+	);
+}
+
+export default AboutPage;
