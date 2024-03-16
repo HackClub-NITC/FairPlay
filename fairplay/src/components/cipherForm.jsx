@@ -169,9 +169,9 @@ function CipherForm() {
 					<label htmlFor="key">Key:</label>
 					<input type="text" id="key" value={key} onChange={handleKeyChange} />
 				</div>
-				{/* <button type="button" onClick={handlePopulateCipher}>
+				<button type="button" onClick={handlePopulateCipher}>
 					Populate Cipher
-				</button> */}
+				</button>
 				<br />
 				<FiveFiveStatic cipherText={key} />
 				<div>
@@ -183,7 +183,7 @@ function CipherForm() {
 						onChange={handlePlainTextChange}
 					/>
 				</div>
-				<button type="submit">Submit</button>
+				<button type="submit">Encrypt</button>
 			</form>
 
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
