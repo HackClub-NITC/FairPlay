@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./FiveFiveHighlight.module.css";
-import "animate.css";
 
 const FiveFiveHighlight = ({
 	cipherText,

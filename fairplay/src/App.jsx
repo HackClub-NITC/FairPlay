@@ -1,7 +1,8 @@
 // src/App.js
 import React from "react";
 import "./App.css";
-import FiveFiveDynamic from "./components/FiveFiveDynamic/FiveFiveDynamic"; // Import the FiveFiveDynamic component
+import FiveFiveDynamic from "./components/FiveFiveDynamic/FiveFiveDynamic";
+import Chatbot from "./components/ChatBox/Chatbot";
 import ChatbotButton from "./components/ChatBox/ChatBotButton";
 
 
@@ -10,7 +11,12 @@ function App() {
 		<div className="App">
 
 
-		<ChatbotButton />
+
+		
+
+			<FiveFiveDynamic />
+    <ChatbotButton />
+
 		</div>
 	);
 }

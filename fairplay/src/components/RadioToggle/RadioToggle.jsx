@@ -1,58 +1,28 @@
-import React, { useState } from 'react';
-import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
-import RadioDecrypt from '../RadioDecrypt/RadioDecrypt';
-import styles from './RadioToggle.module.css';
+import React from 'react'
 
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
 
-function RadioToggle() {
-  // State to manage the checked radio button
-  const [selectedOption, setSelectedOption] = useState('Encrypt');
-
-  // Function to handle radio button change
-  const handleRadioChange = (event) => {
-    setSelectedOption(event.target.value);
-  };
-
-  // Function to render the selected page component
-  const renderSelectedPage = () => {
-    switch (selectedOption) {
-      case 'Encrypt':
-        return <RadioEncrypt />;
-      case 'Decrypt':
-        return <RadioDecrypt />;
-      default:
-        return null;
-    }
-  };
-
+const RadioToggle = () => {
   return (
-    <div className={styles.radio-inputs}>
-      <label className={styles.radio}>
-        <input
-          type="radio"
-          name="radio"
-          value="Encrypt"
-          checked={selectedOption === 'Encrypt'}
-          onChange={handleRadioChange}
-        />
-        <span className={styles.name}>Encrypt</span>
-      </label>
-      <label className={styles.radio}>
-        <input
-          type="radio"
-          name="radio"
-          value="Decrypt"
-          checked={selectedOption === 'Decrypt'}
-          onChange={handleRadioChange}
-        />
-
-        <span className={styles.name}>Decrypt</span>
-      </label>
-
-      {/* Render the selected page */}
-      {renderSelectedPage()}
+    <div>
+      <Tabs
+      defaultActiveKey="profile"
+      id="uncontrolled-tab-example"
+      className="mb-3"
+    >
+      <Tab eventKey="home" title="Home">
+        Tab content for Home
+      </Tab>
+      <Tab eventKey="profile" title="Profile">
+        Tab content for Profile
+      </Tab>
+      <Tab eventKey="contact" title="Contact" disabled>
+        Tab content for Contact
+      </Tab>
+    </Tabs>
     </div>
-  );
+  )
 }
 
-export default RadioToggle;
+export default RadioToggle

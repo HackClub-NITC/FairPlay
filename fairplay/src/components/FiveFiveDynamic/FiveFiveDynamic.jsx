@@ -6,7 +6,7 @@ import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 // import AnimatedButtons from "../PlayPauseButton/PlayPauseButton";
 
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
-import "./FiveFive.css";
+import style from "./FiveFiveDynamic.module.css";
 
 const FiveFiveDynamic = () => {
 	const [step, setStep] = useState(0);

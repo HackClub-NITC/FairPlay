@@ -2,9 +2,10 @@
 
 :root {
 	--size: 80px;
-  }
-  
-  .box {
+}
+
+.box {
+
 	width: var(--size);
 	height: var(--size);
 	background-color: rgb(179, 179, 255);
@@ -44,3 +45,4 @@
 	}
   }
   
+
