@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
 import FiveFiveHighlight from "../FiveFiveHighlight/FiveFiveHighlight";
 import FilterInputText from "../FilterInputText/FilterInputText";
 import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
+// import AnimatedButtons from "../PlayPauseButton/PlayPauseButton";
 
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
 import "./FiveFive.css";
@@ -15,6 +16,8 @@ const FiveFiveDynamic = () => {
 	const [substrings, setSubstrings] = useState([]);
 	const [encryptedSubstrings, setEncryptedSubstrings] = useState("");
 	const [flag, setFlag] = useState(1); // Initialize flag with 1
+	const [isPlaying, setIsPlaying] = useState(false); // State to track play/pause
+	const timerRef = useRef(null); // Reference to the timer
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
@@ -93,6 +96,20 @@ const FiveFiveDynamic = () => {
 		return substrings;
 	};
 
+	// Function to handle the play/pause button click
+	const handlePlayToggle = () => {
+		setIsPlaying(!isPlaying); // Toggle the play/pause state
+		if (!isPlaying) {
+			// If playing, start the timer
+			timerRef.current = setInterval(() => {
+				handleNextClick(); // Call handleNextClick every 1 seconds
+			}, 1000); // Change to 3000 milliseconds for 3 seconds interval
+		} else {
+			// If paused, clear the timer
+			clearInterval(timerRef.current);
+		}
+	};
+
 	return (
 		<div>
 			<label htmlFor="inputString">Input String:</label>
@@ -157,7 +174,6 @@ const FiveFiveDynamic = () => {
 							encrypted={true} // Indicate that these substrings are encrypted
 						/>
 						<br />
-
 						{flag === -1 && (
 							<FiveFiveHighlight
 								cipherText={key}
@@ -179,7 +195,9 @@ const FiveFiveDynamic = () => {
 			)}
 			<br />
 			<button onClick={handleBackClick}>Back</button>
+			<button onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button>
 			<button onClick={handleNextClick}>Next</button>
+			<br />
 			<button onClick={handleResetClick}>Reset</button>{" "}
 			{/* Added reset button */}
 		</div>
