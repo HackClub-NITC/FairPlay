@@ -2,22 +2,16 @@
 import React from "react";
 import "./App.css";
 
-
-import PlayfairCipher from "./components/FlayFairAnimation/PlayFairAnimation";
-import RadioToggle from "./components/RadioToggle/RadioToggle";
+import Landing from "./pages/Landing/Landing";
 
 
 function App() {
 	return (
-		<div className="App">
+		<div className="App" >
 
-			<CipherForm />
-
-			<RadioToggle />
-
-
-
-
+			<Landing />
+			
+			
 		</div>
 	);
 }
