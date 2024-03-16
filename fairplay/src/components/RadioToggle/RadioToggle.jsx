@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
 import RadioDecrypt from '../RadioDecrypt/RadioDecrypt';
-import './style.css';
+import styles from './RadioToggle.module.css';
 
 
 function RadioToggle() {
@@ -26,8 +26,8 @@ function RadioToggle() {
   };
 
   return (
-    <div className="radio-inputs">
-      <label className="radio">
+    <div className={styles.radio-inputs}>
+      <label className={styles.radio}>
         <input
           type="radio"
           name="radio"
@@ -35,9 +35,9 @@ function RadioToggle() {
           checked={selectedOption === 'Encrypt'}
           onChange={handleRadioChange}
         />
-        <span className="name">Encrypt</span>
+        <span className={styles.name}>Encrypt</span>
       </label>
-      <label className="radio">
+      <label className={styles.radio}>
         <input
           type="radio"
           name="radio"
@@ -45,7 +45,8 @@ function RadioToggle() {
           checked={selectedOption === 'Decrypt'}
           onChange={handleRadioChange}
         />
-        <span className="name">Decrypt</span>
+
+        <span className={styles.name}>Decrypt</span>
       </label>
 
       {/* Render the selected page */}
