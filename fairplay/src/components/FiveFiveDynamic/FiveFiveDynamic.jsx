@@ -14,6 +14,7 @@ const FiveFiveDynamic = () => {
 	const [inputString, setInputString] = useState("");
 	const [substrings, setSubstrings] = useState([]);
 	const [encryptedSubstrings, setEncryptedSubstrings] = useState("");
+	const [flag, setFlag] = useState(1); // Initialize flag with 1
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
@@ -37,6 +38,8 @@ const FiveFiveDynamic = () => {
 		} else if (step > 1 && step <= 2 + 2 * substrings.length) {
 			if (step !== 2 + 2 * substrings.length) {
 				setStep(step + 1); // Increment step only if current step is not the end
+				setFlag(flag === 1 ? -1 : 1); // Toggle the flag value between 1 and -1
+				console.log("Flag:", flag);
 			}
 		} else {
 			// Handle any additional steps here
@@ -60,6 +63,8 @@ const FiveFiveDynamic = () => {
 		if (step > 0 && step !== 2) {
 			// Update the condition here
 			setStep(step - 1); // Decrease step if it's greater than 0 and not 2
+			setFlag(flag === 1 ? -1 : 1); // Toggle the flag value between 1 and -1
+			console.log("Flag:", flag);
 		}
 	};
 
@@ -151,21 +156,22 @@ const FiveFiveDynamic = () => {
 							first={false}
 							encrypted={true} // Indicate that these substrings are encrypted
 						/>
+						{/* if flag = 1, then the following code will be executed */}
 						<br />
 						<FiveFiveHighlight
 							cipherText={key}
 							charOne={substrings[Math.floor((step - 3) / 2)][0]}
 							charTwo={substrings[Math.floor((step - 3) / 2)][1]}
 						/>
-
-						{/* <br />
+						<br />
+						{/* else if flag = -1 the following will be excuted */}
 						<FiveFiveHighlight
 							cipherText={key}
-							charOne={substrings[step - 3][0]}
-							charTwo={substrings[step - 3][1]}
-							charOneOp={encryptedSubstrings[step - 3][0]}
-							charTwoOp={encryptedSubstrings[step - 3][1]}
-						/> */}
+							charOne={substrings[Math.floor((step - 3) / 2)][0]}
+							charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+							charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
+							charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
+						/>
 					</div>
 				</>
 			)}
