@@ -4,10 +4,7 @@ import "./App.css";
 
 
 import Landing from "./components/Landing/Landing.jsx";
-
-
-import RadioEncrypt from "./components/RadioEncrypt/RadioEncrypt.jsx";
-import RadioDecrypt from "./components/RadioDecrypt/RadioDecrypt.jsx";
+import Radio from "./components/Radio/Radio.jsx";
 
 
 function App() {
@@ -17,9 +14,10 @@ function App() {
 		<h1>qpiervb</h1>
 		<Landing />
 
-		<RadioEncrypt />
+		<Radio />
 
-		<RadioDecrypt />
+
+
 
 
 		</div>

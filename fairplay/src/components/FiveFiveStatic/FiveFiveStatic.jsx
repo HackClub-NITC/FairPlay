@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./FiveFiveStatic.module.css";
-import "animate.css";
 
 const FiveFiveStatic = ({ cipherText }) => {
   const matrix5x5 = [
