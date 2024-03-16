@@ -47,10 +47,24 @@ const Chatbot = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		if (!input.trim()) return; // Ensure input is not empty
-		console.log("User input:", input); // Log the user input
-		const response = await chatGptResponse(input.trim()); // Trim input before passing to chatGptResponse
-		setMessages([{ text: response, user: false }]);
+		if (!input.trim()) return;
+
+		// Add user's input as a message
+		const userMessage = { text: input, user: true };
+		setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+		// Add a placeholder message while waiting for AI response
+		const aiMessage = { text: "...", user: false };
+		setMessages((prevMessages) => [...prevMessages, aiMessage]);
+
+		// Send the user's input to GPT-3.5
+		const response = await chatGptResponse(input);
+
+		// Replace the placeholder message with the AI response
+		const newAiMessage = { text: response, user: false };
+		setMessages((prevMessages) => [...prevMessages.slice(0, -1), newAiMessage]);
+
+		// Clear the input field
 		setInput("");
 	};
 
