@@ -1,11 +1,13 @@
 import React from 'react';
+import FiveFiveDynamic from '../FiveFiveDynamic/FiveFiveDynamic';
 
 
 
 const RadioEncrypt = () => {
   return (
     <div>
-      <h1>Encrypt</h1>
+      <FiveFiveDynamic />
+
       
     </div>
   )
