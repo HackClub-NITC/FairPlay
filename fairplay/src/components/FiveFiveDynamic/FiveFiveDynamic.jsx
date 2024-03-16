@@ -156,22 +156,24 @@ const FiveFiveDynamic = () => {
 							first={false}
 							encrypted={true} // Indicate that these substrings are encrypted
 						/>
-						{/* if flag = 1, then the following code will be executed */}
 						<br />
-						<FiveFiveHighlight
-							cipherText={key}
-							charOne={substrings[Math.floor((step - 3) / 2)][0]}
-							charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-						/>
-						<br />
-						{/* else if flag = -1 the following will be excuted */}
-						<FiveFiveHighlight
-							cipherText={key}
-							charOne={substrings[Math.floor((step - 3) / 2)][0]}
-							charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-							charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
-							charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
-						/>
+
+						{flag === -1 && (
+							<FiveFiveHighlight
+								cipherText={key}
+								charOne={substrings[Math.floor((step - 3) / 2)][0]}
+								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+							/>
+						)}
+						{flag === 1 && (
+							<FiveFiveHighlight
+								cipherText={key}
+								charOne={substrings[Math.floor((step - 3) / 2)][0]}
+								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+								charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
+								charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
+							/>
+						)}
 					</div>
 				</>
 			)}
