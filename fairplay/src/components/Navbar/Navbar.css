@@ -1,0 +1,87 @@
+/* Add your custom CSS styles here */
+/* You may need to adjust styles based on your design requirements */
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.d-flex {
+  display: flex !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.py-3 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #dee2e6 !important;
+}
+
+.mb-md-auto {
+  margin-bottom: auto !important;
+}
+
+.me-md-auto {
+  margin-right: auto !important;
+}
+
+.link-body-emphasis {
+  color: #007bff !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.bi {
+  vertical-align: -.125em !important;
+  fill: currentColor !important;
+}
+
+.fs-4 {
+  font-size: 1.5rem !important;
+}
+
+.nav {
+  display: flex !important;
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+  list-style: none !important;
+}
+
+.nav-pills .nav-link {
+  color: #007bff !important;
+  border-radius: .25rem !important;
+  padding: .5rem 1rem !important;
+  margin-right: .5rem !important;
+  line-height: 1.25 !important;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+  color: #fff !important;
+  background-color: #007bff !important;
+}
+
+.nav-item {
+  display: flex !important;
+  margin-bottom: 0 !important;
+}

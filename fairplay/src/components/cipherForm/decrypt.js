@@ -54,6 +54,10 @@ export function decrypt(str, keyT, ps) {
 	let a = new Array(4).fill(0);
 	let newstr = new Array(ps);
 
+	function mod5(n) {
+		return ((n % 5) + 5) % 5;
+	}
+
 	for (i = 0; i < ps; i += 2) {
 		let brr = search(keyT, str[i], str[i + 1], a);
 		let k1 = brr[0];
@@ -76,6 +80,7 @@ export function decrypt(str, keyT, ps) {
 	for (let i = 0; i < newstr.length; i++) {
 		res += newstr[i];
 	}
+
 	return res;
 }
 
