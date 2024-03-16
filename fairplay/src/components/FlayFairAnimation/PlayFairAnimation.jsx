@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
-import "./Animation.css";
+import "./PlayFairAnimation.css";
+
+import FilterInputText from "../FilterInputText/FilterInputText";
 
 const PlayfairCipher = () => {
     const [plainText, setPlainText] = useState('');
@@ -96,6 +98,7 @@ const PlayfairCipher = () => {
                 <p>Cipher Key: {cipherKey}</p>
                 <p>Cipher Text: {cipherText}</p>
                 <p>Matrix:</p>
+                <FilterInputText inputString={plainText} />
                 <div className="matrix">
                     {matrix.map((row, rowIndex) => (
                         <div key={rowIndex} className="row">
