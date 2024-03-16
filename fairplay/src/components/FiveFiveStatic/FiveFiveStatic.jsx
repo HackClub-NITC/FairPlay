@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import styles from "./FiveFiveStatic.module.css"; // Import the CSS module
 
 const FiveFiveStatic = ({ cipherText }) => {
+
   const matrix5x5 = [
     [1, 2, 3, 4, 5],
     [6, 7, 8, 9, 10],
@@ -93,6 +94,7 @@ const FiveFiveStatic = ({ cipherText }) => {
       ))}
     </div>
   );
+
 };
 
 export default FiveFiveStatic;
