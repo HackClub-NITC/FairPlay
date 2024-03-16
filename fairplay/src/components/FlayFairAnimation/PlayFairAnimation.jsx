@@ -98,7 +98,11 @@ const PlayfairCipher = () => {
                 <p>Cipher Key: {cipherKey}</p>
                 <p>Cipher Text: {cipherText}</p>
                 <p>Matrix:</p>
-                <FilterInputText inputString={plainText} />
+
+
+                <FilterInputText inputString={plainText.toLowerCase()} />
+
+
                 <div className="matrix">
                     {matrix.map((row, rowIndex) => (
                         <div key={rowIndex} className="row">

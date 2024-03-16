@@ -3,6 +3,7 @@ import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
 import RadioDecrypt from '../RadioDecrypt/RadioDecrypt';
 import './style.css';
 
+
 function RadioToggle() {
   // State to manage the checked radio button
   const [selectedOption, setSelectedOption] = useState('Encrypt');
