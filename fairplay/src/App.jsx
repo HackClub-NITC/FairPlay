@@ -13,11 +13,12 @@ import Chatbot from "./components/ChatBox/Chatbot";
 import Landing from "./components/Landing/Landing";
 
 
+
 function App() {
 	return (
 		<div className="App">
 
-			<CipherForm />
+
 			<FiveFiveDynamic />
 			<Chatbot />
 

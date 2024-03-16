@@ -1,42 +1,46 @@
+/* FiveFiveStatic.module.css */
+
 :root {
 	--size: 80px;
-}
-
-.box {
+  }
+  
+  .box {
 	width: var(--size);
 	height: var(--size);
 	background-color: rgb(179, 179, 255);
 	border: 2px solid black;
-}
-
-.box:hover {
+  }
+  
+  .box:hover {
 	scale: 1.1;
 	transition: ease 0.3s;
-}
-
-/* Add styles for animate__pulse class */
-.animate__pulse {
+  }
+  
+  /* Add styles for animate__pulse class */
+  .animate__pulse {
 	animation: anpulse 1s infinite; /* Adjust animation duration and other properties as needed */
-}
-
-.row {
+  }
+  
+  .row {
 	display: flex;
 	flex-direction: row;
-}
-
-.x {
+  }
+  
+  .x {
 	background-color: yellow; /* Change background color to yellow */
 	font-weight: bold; /* Make text bold */
 	/* Add any other styling you want */
-}
-@keyframes pulse {
+  }
+  
+  @keyframes pulse {
 	0% {
-			transform: scale(1);
+	  transform: scale(1);
 	}
 	50% {
-			transform: scale(1.1);
+	  transform: scale(1.1);
 	}
 	100% {
-			transform: scale(1);
+	  transform: scale(1);
 	}
-}
+  }
+  
