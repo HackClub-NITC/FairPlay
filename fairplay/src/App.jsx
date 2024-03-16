@@ -14,8 +14,8 @@ import Chatbot from "./components/ChatBox/Chatbot";
 function App() {
 	return (
 		<div className="App">
-			{/* <CipherForm />
-			<FiveFiveDynamic /> */}
+			<CipherForm />
+			<FiveFiveDynamic />
 			<Chatbot />
 		</div>
 	);
