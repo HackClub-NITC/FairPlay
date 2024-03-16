@@ -101,6 +101,7 @@ const FiveFiveDynamic = () => {
 		setInputString("");
 		setSubstrings([]);
 		setEncryptedSubstrings([]);
+		setFlag(flag === 1);
 	};
 
 	// Function to filter the input string
