@@ -16,7 +16,9 @@ const Fivefive = ({ cipherText }) => {
 				<div key={i} className={`row ${i}`}>
 					{row.map((col, j) => (
 						<div key={j} className="box" id={`${i}${j}`}>
-							<p>{cipherText[(i * 5 + j) % cipherText.length]}</p>
+							<p>
+								{cipherText ? cipherText[(i * 5 + j) % cipherText.length] : ""}
+							</p>
 						</div>
 					))}
 				</div>
