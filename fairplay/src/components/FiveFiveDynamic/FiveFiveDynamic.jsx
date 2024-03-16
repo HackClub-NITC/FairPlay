@@ -21,16 +21,16 @@ const FiveFiveDynamic = () => {
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
-		// Remove spaces from the input string and set the state
-		setInputString(e.target.value.replace(/\s/g, ""));
+		setInputString(e.target.value.toUpperCase().replace(/\s/g, ""));
 	};
 
 	// Function to handle the "Next" button click
 	const handleNextClick = () => {
-		let filteredInputString = filterString(inputString).toUpperCase();
+		let filteredInputString = filterString(inputString); // No need for toUpperCase here
 
-		if (isPlaying) {
-			setIsPlaying(false);
+		// Add 'X' if length is odd
+		if (filteredInputString.length % 2 !== 0) {
+			filteredInputString += "X";
 		}
 
 		if (step === 0) {

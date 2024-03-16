@@ -13,17 +13,17 @@ function FilterInputText({ inputString }) {
 
 		let filteredStr = "";
 		for (let i = 0; i < str.length; i++) {
-			// If two adjacent characters are the same, insert an 'x' in between
 			filteredStr += str[i];
+			// Append 'X' between consecutive identical characters
 			if (i < str.length - 1 && str[i] === str[i + 1]) {
-				filteredStr += "x";
+				filteredStr += "X";
 			}
 		}
-		// If the length of the string is odd, add 'x' at the end
+		// Append 'X' if the length is odd
 		if (filteredStr.length % 2 !== 0) {
-			filteredStr += "x";
+			filteredStr += "X";
 		}
-		return filteredStr;
+		return filteredStr.toUpperCase(); // Ensure uniform case
 	};
 
 	// Function to split the string into substrings of two characters
