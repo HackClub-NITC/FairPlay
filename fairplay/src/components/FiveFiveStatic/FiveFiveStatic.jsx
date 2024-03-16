@@ -19,9 +19,7 @@ const FiveFiveStatic = ({ cipherText }) => {
 	}
 
 	for (let i = 0; i < modifiedCipherText.length; i++) {
-		if (
-			hash[modifiedCipherText[i].charCodeAt(0) - "A".charCodeAt(0)] === 0
-		) {
+		if (hash[modifiedCipherText[i].charCodeAt(0) - "A".charCodeAt(0)] === 0) {
 			hash[modifiedCipherText[i].charCodeAt(0) - "A".charCodeAt(0)] = 1;
 		}
 	}
@@ -36,14 +34,13 @@ const FiveFiveStatic = ({ cipherText }) => {
 		<div>
 			{matrix5x5.map((row, i) => (
 				<div key={i} className={`row ${i}`}>
-
 					{row.map((_, j) => (
 						<div
 							key={j}
 							className="box"
 							id={`${i}${j}`}
 							style={{
-								color: i + 5 * (j) < cipherText.length ? "green" : "black", // Set the color to green
+								color: j + 5 * i < cipherText.length ? "green" : "black",
 							}}
 						>
 							<p>

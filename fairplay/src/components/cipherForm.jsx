@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import FivefiveStaric from "./FiveFiveStatic/FiveFiveStatic";
+import FiveFiveStatic from "./FiveFiveStatic/FiveFiveStatic";
 
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
@@ -169,15 +169,11 @@ function CipherForm() {
 					<label htmlFor="key">Key:</label>
 					<input type="text" id="key" value={key} onChange={handleKeyChange} />
 				</div>
-				{/* <button type="button" onClick={handlePopulateCipher}>
-					Populate Cipher with Key																			optional
-				</button> */}
+				<button type="button" onClick={handlePopulateCipher}>
+					Populate Cipher
+				</button>
 				<br />
-				{showEmptyCipher && <Fivefive />}{" "}
-				{/* Show empty cipher if not populated */}
-				{!showEmptyCipher && <Fivefive cipherText={key} />}{" "}
-				{/* Show cipher with key if populated */}
-				<br />
+				<FiveFiveStatic cipherText={key} />
 				<div>
 					<label htmlFor="plainText">Plain Text:</label>
 					<input
@@ -190,12 +186,7 @@ function CipherForm() {
 				<button type="submit">Submit</button>
 			</form>
 
-			{/* Display the encrypted text */}
-
-
-
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
-
 		</div>
 	);
 }
