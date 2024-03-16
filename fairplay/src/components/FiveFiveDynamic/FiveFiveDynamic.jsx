@@ -42,7 +42,10 @@ const FiveFiveDynamic = () => {
 
 		// Encrypt the modifiedCipherText when step 0 is completed
 		if (step === 0) {
-			const encryptedText = encryptByPlayfairCipher(inputString, key);
+			const encryptedText = encryptByPlayfairCipher(
+				inputString,
+				key
+			).toUpperCase();
 			console.log("Encrypted Text:", encryptedText);
 			const encryptedSubstring = splitString(encryptedText);
 			setEncryptedSubstrings(encryptedSubstring);
@@ -103,12 +106,12 @@ const FiveFiveDynamic = () => {
 				<>
 					<br />
 					<FilterInputText inputString={modifiedCipherText} />
-					<br />
+					{/* <br />
 					<SubstringDisplay
 						substrings={[]}
 						length={encryptedSubstrings.length}
 						first={true}
-					/>
+					/> */}
 					<br />
 					<FiveFiveStatic cipherText="" />
 				</>
@@ -117,12 +120,12 @@ const FiveFiveDynamic = () => {
 				<>
 					<br />
 					<FilterInputText inputString={modifiedCipherText} />
-					<br />
+					{/* <br />
 					<SubstringDisplay
 						substrings={[]}
 						length={encryptedSubstrings.length}
 						first={true}
-					/>
+					/> */}
 					<br />
 					<FiveFiveStatic cipherText={key} />
 				</>
@@ -131,7 +134,18 @@ const FiveFiveDynamic = () => {
 				<>
 					<br />
 					<div>
-						<FilterInputText inputString={substrings[step - 3]} />
+						<SubstringDisplay
+							substrings={substrings}
+							length={substrings.length}
+							first={false}
+						/>
+						<br />
+						{/* Calculate the length of encrypted substrings based on the step */}
+						<SubstringDisplay
+							substrings={encryptedSubstrings.slice(0, step - 2)} // Display the first 'step - 2' encrypted substrings
+							length={encryptedSubstrings.length}
+							first={false}
+						/>
 						<br />
 						<FiveFiveHighlight
 							cipherText={key}
