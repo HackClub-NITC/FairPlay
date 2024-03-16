@@ -202,7 +202,7 @@ const FiveFiveDynamic = () => {
 			)}
 			<br />
 			<button onClick={handleBackClick}>Back</button>
-			<button onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button>
+			{/* <button onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button> */}
 			<button onClick={handleNextClick}>Next</button>
 			<br />
 			<button onClick={handleResetClick}>Reset</button>{" "}
