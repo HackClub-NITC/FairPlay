@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import React from "react";
 
 import "./FiveFive.css";
+=======
+import React, { useState } from 'react';
+import './FiveFive.css'
+>>>>>>> Matrix1
 
 const matrix5x5 = [
 	[1, 2, 3, 4, 5],
@@ -11,6 +16,7 @@ const matrix5x5 = [
 ];
 
 const Fivefive = () => {
+<<<<<<< HEAD
 	return (
 		<div>
 			<div className="0" class="row">
@@ -30,6 +36,40 @@ const Fivefive = () => {
 					<p>{matrix5x5[0][4]}</p>
 				</div>
 			</div>
+=======
+  return (
+
+    
+    <div>
+
+<button onClick={toggleColor}>Toggle Color</button>
+      <table>
+        <tbody>
+          {Array.from({ length: 5 }).map((_, row) => (
+            <tr key={row}>
+              {Array.from({ length: 5 }).map((_, col) => {
+                const index = row * 5 + col;
+                let color = showGreen && index < words.length ? 'green' : 'black';
+                return (
+                  <td key={col} style={{ color }}>
+                    {words[index] || ''}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+
+      <div className="0" class="row">
+        <div className="box" id="00"><p>{matrix5x5[0][0]}</p></div>
+        <div className="box" id="01"><p>{matrix5x5[0][1]}</p></div>
+        <div className="box" id="02"><p>{matrix5x5[0][2]}</p></div>
+        <div className="box" id="03"><p>{matrix5x5[0][3]}</p></div>
+        <div className="box" id="04"><p>{matrix5x5[0][4]}</p></div>
+      </div>
+>>>>>>> Matrix1
 
 			<div className="1" class="row">
 				<div className="box" id="10">
