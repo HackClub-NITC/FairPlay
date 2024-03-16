@@ -3,6 +3,7 @@ import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
 import FilterInputText from "../FilterInputText/FilterInputText";
 import { encryptByPlayfairCipher } from "./encrypt";
 import { decryptByPlayfairCipher } from "./decrypt";
+import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
@@ -23,7 +24,6 @@ function CipherForm() {
 		e.preventDefault();
 
 		// Encrypt the plain text
-		console.log(plainText.replace(/\s/g, ""));
 		setCipherText(
 			encryptByPlayfairCipher(plainText.replace(/\s/g, ""), key).toUpperCase()
 		);
@@ -48,7 +48,16 @@ function CipherForm() {
 						/>
 					</div>
 					<br />
-					<FilterInputText inputString={plainText} />
+					{plainText ? ( // Conditionally render FilterInputText if plainText is not empty
+						<FilterInputText inputString={plainText} />
+					) : (
+						<SubstringDisplay
+							substrings={[]}
+							length={0}
+							first={true}
+							encrypted={false}
+						/>
+					)}
 					<br />
 					<label htmlFor="key">Key:</label>
 					<input type="text" id="key" value={key} onChange={handleKeyChange} />

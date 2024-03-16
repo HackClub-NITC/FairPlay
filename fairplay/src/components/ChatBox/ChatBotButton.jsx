@@ -1,6 +1,5 @@
-// ChatbotButton.js
 import React, { useState } from 'react';
-import Chatbot from './Chatbot'; // Import your Chatbot component
+import Chatbot from "./Chatbot";
 
 const ChatbotButton = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,18 +9,21 @@ const ChatbotButton = () => {
   };
 
   const buttonStyle = {
-    backgroundColor: '#007bff',
+    backgroundColor: 'black',
     color: 'white',
     padding: '10px 20px',
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    marginRight: '10px'
+    marginRight: '10px',
+    position: 'fixed',
+    bottom: '10px',
+    right: '10px'
   };
 
   return (
     <div>
-      <button onClick={toggleChatbot} style={buttonStyle}>Open Chat</button>
+      <button onClick={toggleChatbot} style={buttonStyle}>ChatBot</button>
       {isOpen && <Chatbot />}
     </div>
   );
