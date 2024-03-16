@@ -65,19 +65,17 @@ const FiveFiveDynamic = () => {
 	};
 
 	const handlePlayToggle = () => {
-		const nextIsPlaying = !isPlaying; // Get the next isPlaying state
-		setIsPlaying(nextIsPlaying); // Update the isPlaying state
-
-		if (!nextIsPlaying) {
-			// If paused, clear the timer
-			clearInterval(timerRef.current);
-		} else {
-			// If playing, start the timer
+		if (!isPlaying) {
+			// If not playing, start the timer to call handleNextClick every 1 second
 			timerRef.current = setInterval(() => {
-				// Call handleNextClick every 1 second
 				handleNextClick();
 			}, 1000);
+		} else {
+			// If playing, clear the timer
+			clearInterval(timerRef.current);
 		}
+		// Toggle the isPlaying state
+		setIsPlaying(!isPlaying);
 	};
 
 	// Function to handle the "Back" button click
