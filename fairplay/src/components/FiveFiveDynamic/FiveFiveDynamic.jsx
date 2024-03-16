@@ -34,8 +34,8 @@ const FiveFiveDynamic = () => {
 			const newSubstrings = splitString(filteredInputString);
 			setSubstrings(newSubstrings);
 			console.log("Number of substrings:", newSubstrings.length);
-		} else if (step > 1 && step <= 2 + substrings.length) {
-			if (step !== 2 + substrings.length) {
+		} else if (step > 1 && step <= 2 + 2 * substrings.length) {
+			if (step !== 2 + 2 * substrings.length) {
 				setStep(step + 1); // Increment step only if current step is not the end
 			}
 		} else {
@@ -131,7 +131,7 @@ const FiveFiveDynamic = () => {
 					<FiveFiveStatic cipherText={key} />
 				</>
 			)}
-			{step > 2 && step <= 2 + substrings.length && (
+			{step > 2 && step <= 2 + 2 * substrings.length && (
 				<>
 					<br />
 					<div>
@@ -143,7 +143,10 @@ const FiveFiveDynamic = () => {
 						/>
 						<br />
 						<SubstringDisplay
-							substrings={encryptedSubstrings.slice(0, step - 2)}
+							substrings={encryptedSubstrings.slice(
+								0,
+								Math.floor((step - 1) / 2)
+							)}
 							length={encryptedSubstrings.length}
 							first={false}
 							encrypted={true} // Indicate that these substrings are encrypted
@@ -151,16 +154,18 @@ const FiveFiveDynamic = () => {
 						<br />
 						<FiveFiveHighlight
 							cipherText={key}
-							charOne={substrings[step - 3][0]}
-							charTwo={substrings[step - 3][1]}
+							charOne={substrings[Math.floor((step - 3) / 2)][0]}
+							charTwo={substrings[Math.floor((step - 3) / 2)][1]}
 						/>
+
+						{/* <br />
 						<FiveFiveHighlight
 							cipherText={key}
 							charOne={substrings[step - 3][0]}
 							charTwo={substrings[step - 3][1]}
 							charOneOp={encryptedSubstrings[step - 3][0]}
 							charTwoOp={encryptedSubstrings[step - 3][1]}
-						/>
+						/> */}
 					</div>
 				</>
 			)}
