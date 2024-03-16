@@ -61,6 +61,7 @@ const Chatbot = () => {
 		const userMessage = { text: input, user: true };
 		setMessages((prevMessages) => [...prevMessages, userMessage]);
 
+		setInput("");
 		// Add a placeholder message while waiting for AI response
 		const aiMessage = { text: "...", user: false };
 		setMessages((prevMessages) => [...prevMessages, aiMessage]);
@@ -73,7 +74,6 @@ const Chatbot = () => {
 		setMessages((prevMessages) => [...prevMessages.slice(0, -1), newAiMessage]);
 
 		// Clear the input field
-		setInput("");
 	};
 
 	return (
