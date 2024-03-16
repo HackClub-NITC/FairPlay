@@ -7,12 +7,15 @@ import FilterInputText from "./components/FilterInputText/FilterInputText";
 import PlayfairCipher from "./components/FlayFairAnimation/PlayFairAnimation";
 
 
-function App() {
-	return (
-		<div className="App">
-		
+import CipherForm from "./components/cipherForm/cipherForm";
+
+import RadioToggle from "./components/RadioToggle/RadioToggle";
+import Navbar from "./components/Navbar/Navbar";
+
 
 			<PlayfairCipher />
+   <Navbar />
+
 
 		</div>
 	);
