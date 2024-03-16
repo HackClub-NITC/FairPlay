@@ -11,7 +11,7 @@ function App() {
 			
 			<h1>Meow</h1>
 
-			<FilterInputText inputString={"Meowsies"}/>
+			<FilterInputText inputString={"Meowsxyies"}/>
 
 		</div>
 	);

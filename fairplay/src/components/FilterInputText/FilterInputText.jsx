@@ -1,6 +1,6 @@
+// FilterInputText.js
 import React from 'react';
-
-import './FilterInputText.css'
+import styles from './FilterInputText.module.css'; // Import CSS Module
 
 function FilterInputText({ inputString }) {
   // Function to filter the string according to the rules
@@ -38,13 +38,14 @@ function FilterInputText({ inputString }) {
   const substrings = splitString(filteredString);
 
   return (
-    <div className="grid_input_text">
+    <div className={styles.grid_input_text}>
+
       {substrings.map((substring, index) => (
-        <div key={index} className="substring">
+        <div key={index} className={styles.substring}>
           {substring.split('').map((char, charIndex) => (
             <span
               key={charIndex}
-              className={char === 'x' ? 'green' : 'black'}
+              className={char === 'x' ? styles.green : styles.black} // Use generated class names
             >
               {char}
             </span>
