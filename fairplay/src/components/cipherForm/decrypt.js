@@ -45,6 +45,10 @@ export function generateKeyTable(key, ks, keyT) {
 	return keyT;
 }
 
+export function mod5(n) {
+	return ((n % 5) + 5) % 5;
+}
+
 export function decrypt(str, keyT, ps) {
 	let i;
 	let a = new Array(4).fill(0);
