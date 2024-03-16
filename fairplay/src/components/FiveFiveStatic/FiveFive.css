@@ -16,10 +16,27 @@
 
 /* Add styles for animate__pulse class */
 .animate__pulse {
-	animation: animate__pulse 1s infinite; /* Adjust animation duration and other properties as needed */
+	animation: anpulse 1s infinite; /* Adjust animation duration and other properties as needed */
 }
 
 .row {
 	display: flex;
 	flex-direction: row;
+}
+
+.x {
+	background-color: yellow; /* Change background color to yellow */
+	font-weight: bold; /* Make text bold */
+	/* Add any other styling you want */
+}
+@keyframes pulse {
+	0% {
+			transform: scale(1);
+	}
+	50% {
+			transform: scale(1.1);
+	}
+	100% {
+			transform: scale(1);
+	}
 }

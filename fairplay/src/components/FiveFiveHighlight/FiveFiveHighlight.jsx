@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./FiveFiveHighlight.module.css";
+import "animate.css";
 
 const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
     const matrix5x5 = [
@@ -87,6 +88,7 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
                                 : modifiedCipherText[currentIndex];
                         const highlightStyle = {
                             backgroundColor: isInBox(i, j) ? "yellow" : "",
+                            animation: isInBox(i,j) ? "pulse 1s infinite" : ""
                         };
                         return (
                             <div

@@ -23,12 +23,15 @@ function CipherForm() {
 		e.preventDefault();
 
 		// Encrypt the plain text
-		setCipherText(encryptByPlayfairCipher(plainText, key));
+		console.log(plainText.replace(/\s/g, ""));
+		setCipherText(
+			encryptByPlayfairCipher(plainText.replace(/\s/g, ""), key).toUpperCase()
+		);
 	};
 
 	const handleDecrypt = () => {
 		// Decrypt the cipher text
-		setDecryptedText(decryptByPlayfairCipher(cipherText, key));
+		setDecryptedText(decryptByPlayfairCipher(cipherText, key).toUpperCase());
 	};
 
 	return (
