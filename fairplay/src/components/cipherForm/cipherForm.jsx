@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
+import FilterInputText from "../FilterInputText/FilterInputText";
 import { encryptByPlayfairCipher } from "./encrypt";
 import { decryptByPlayfairCipher } from "./decrypt";
 
@@ -34,6 +35,18 @@ function CipherForm() {
 		<div>
 			<form onSubmit={handleSubmit}>
 				<div>
+					<div>
+						<label htmlFor="plainText">Plain Text:</label>
+						<input
+							type="text"
+							id="plainText"
+							value={plainText}
+							onChange={handlePlainTextChange}
+						/>
+					</div>
+					<br />
+					<FilterInputText inputString={plainText} />
+					<br />
 					<label htmlFor="key">Key:</label>
 					<input type="text" id="key" value={key} onChange={handleKeyChange} />
 				</div>
@@ -41,15 +54,7 @@ function CipherForm() {
 				<br />
 				<FiveFiveStatic cipherText={key} />
 				<br />
-				<div>
-					<label htmlFor="plainText">Plain Text:</label>
-					<input
-						type="text"
-						id="plainText"
-						value={plainText}
-						onChange={handlePlainTextChange}
-					/>
-				</div>
+
 				<button type="submit">Encrypt</button>
 			</form>
 

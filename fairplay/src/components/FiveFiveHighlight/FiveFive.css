@@ -1,0 +1,29 @@
+:root {
+	--size: 80px;
+}
+
+.box {
+	width: var(--size);
+	height: var(--size);
+	background-color: rgb(179, 179, 255);
+	border: 2px solid black;
+}
+
+.box:hover {
+	scale: 1.1;
+	transition: ease 0.3s;
+}
+
+/* Add styles for animate__pulse class */
+.animate__pulse {
+	animation: animate__pulse 1s infinite; /* Adjust animation duration and other properties as needed */
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
+
+.highlight {
+	background-color: yellow; /* Change highlight color as needed */
+}
