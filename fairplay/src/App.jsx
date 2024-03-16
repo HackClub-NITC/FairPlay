@@ -1,7 +1,7 @@
 // src/App.js
 import React from "react";
 import "./App.css";
-import CipherForm from "./components/cipherForm";
+import CipherForm from "./components/cipherForm/cipherForm";
 
 function App() {
 	return (
