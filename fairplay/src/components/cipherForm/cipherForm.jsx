@@ -28,7 +28,6 @@ function CipherForm() {
 	const handleDecrypt = () => {
 		// Decrypt the cipher text
 		setDecryptedText(decryptByPlayfairCipher(cipherText, key));
-
 	};
 
 	return (

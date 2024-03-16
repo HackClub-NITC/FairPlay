@@ -1,7 +1,6 @@
 // src/App.js
 import React from "react";
 import "./App.css";
-
 import Landing from "./pages/Landing/Landing";
 
 
@@ -12,6 +11,7 @@ function App() {
 			<Landing />
 			
 			
+
 		</div>
 	);
 }
