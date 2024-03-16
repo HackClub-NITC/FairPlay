@@ -1,24 +1,28 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
+
+import RadioDecrypt from '../RadioDecrypt/RadioDecrypt';
 
 
 const Radio = () => {
   return (
+    <>
+    
       <Tabs>
         <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
+            <Tab>Encrypt</Tab>
+            <Tab>Decrypt</Tab>
         </TabList>
 
         <TabPanel>
-        <h2>Any content 1</h2>
+            <RadioEncrypt />
         </TabPanel>
         <TabPanel>
-        <h2>Any content 2</h2>
+            <RadioDecrypt />
         </TabPanel>
     </Tabs>
-
+    </>
   )
 }
 
