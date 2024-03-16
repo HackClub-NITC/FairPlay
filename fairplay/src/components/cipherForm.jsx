@@ -192,6 +192,8 @@ function CipherForm() {
 
 			{/* Display the encrypted text */}
 
+
+
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
 
 		</div>
