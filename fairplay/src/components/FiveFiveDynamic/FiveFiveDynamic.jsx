@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
 import FiveFiveHighlight from "../FiveFiveHighlight/FiveFiveHighlight";
 import FilterInputText from "../FilterInputText/FilterInputText";
+import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
 import "./FiveFive.css";
 
 const FiveFiveDynamic = () => {
@@ -10,6 +11,7 @@ const FiveFiveDynamic = () => {
 	const [key, setKey] = useState("");
 	const [inputString, setInputString] = useState("");
 	const [substrings, setSubstrings] = useState([]);
+	const [encryptedSubstrings, setEncryptedSubstrings] = useState([]);
 
 	// Function to filter the input string
 	const filterString = (str) => {
@@ -37,8 +39,6 @@ const FiveFiveDynamic = () => {
 	// Function to handle the "Next" button click
 	const handleNextClick = () => {
 		let filteredInputString = filterString(inputString).toUpperCase();
-		console.log(filteredInputString);
-		console.log(step);
 
 		if (step === 0) {
 			setModifiedCipherText(filteredInputString);
@@ -53,6 +53,15 @@ const FiveFiveDynamic = () => {
 			setStep(step + 1); // Increment step only if current step is between 2 and 2 + substrings.length
 		} else {
 			// Handle any additional steps here
+		}
+
+		// Encrypt the modifiedCipherText when step 0 is completed
+		if (step === 0) {
+			const encryptedText = encryptByPlayfairCipher(inputString, key);
+			console.log("Encrypted Text:", encryptedText);
+			const encryptedSubstring = splitString(encryptedText);
+			setEncryptedSubstrings(encryptedSubstring);
+			console.log("Encrypted Substrings:", encryptedSubstring);
 		}
 	};
 
