@@ -7,6 +7,7 @@ function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
 	const [cipherText, setCipherText] = useState("");
+	const [decryptedText, setDecryptedText] = useState("");
 	const [showEmptyCipher, setShowEmptyCipher] = useState(true);
 
 	const handlePlainTextChange = (e) => {
@@ -26,8 +27,8 @@ function CipherForm() {
 
 	const handleDecrypt = () => {
 		// Decrypt the cipher text
-		// setPlainText(decryptByPlayfairCipher(cipherText, key));
-		console.log(decryptByPlayfairCipher(cipherText, key));
+		setDecryptedText(decryptByPlayfairCipher(cipherText, key));
+
 	};
 
 	return (
@@ -40,6 +41,7 @@ function CipherForm() {
 
 				<br />
 				<FiveFiveStatic cipherText={key} />
+				<br />
 				<div>
 					<label htmlFor="plainText">Plain Text:</label>
 					<input
@@ -53,8 +55,10 @@ function CipherForm() {
 			</form>
 
 			<button onClick={handleDecrypt}>Decrypt</button>
-
+			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
+			<br />
+			{decryptedText && <div>Decrypted Text: {decryptedText}</div>}
 		</div>
 	);
 }
