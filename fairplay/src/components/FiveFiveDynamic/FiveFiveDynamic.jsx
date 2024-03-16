@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
 import FiveFiveHighlight from "../FiveFiveHighlight/FiveFiveHighlight";
 import FilterInputText from "../FilterInputText/FilterInputText";
+import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
+
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
 import "./FiveFive.css";
 
@@ -65,6 +67,13 @@ const FiveFiveDynamic = () => {
 		}
 	};
 
+	// Function to handle the "Back" button click
+	const handleBackClick = () => {
+		if (step > 0) {
+			setStep(step - 1); // Decrease step if it's greater than 0
+		}
+	};
+
 	// Function to split the string into substrings of two characters
 	const splitString = (str) => {
 		const substrings = [];
@@ -97,6 +106,8 @@ const FiveFiveDynamic = () => {
 				<>
 					<br />
 					<FilterInputText inputString={modifiedCipherText} />
+					<br />
+					<SubstringDisplay substrings={encryptedSubstrings} />
 					<br />
 					<FiveFiveStatic cipherText="" />
 				</>
@@ -132,6 +143,7 @@ const FiveFiveDynamic = () => {
 			)}
 
 			<br />
+			<button onClick={handleBackClick}>Back</button>
 			<button onClick={handleNextClick}>Next</button>
 		</div>
 	);

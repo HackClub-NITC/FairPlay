@@ -23,7 +23,8 @@ function CipherForm() {
 		e.preventDefault();
 
 		// Encrypt the plain text
-		setCipherText(encryptByPlayfairCipher(plainText, key));
+		console.log(plainText.replace(/\s/g, ""));
+		setCipherText(encryptByPlayfairCipher(plainText.replace(/\s/g, ""), key));
 	};
 
 	const handleDecrypt = () => {
