@@ -39,13 +39,16 @@ const FiveFiveDynamic = () => {
 		let filteredInputString = filterString(inputString).toUpperCase();
 		console.log(filteredInputString);
 		console.log(step);
+
 		if (step === 0) {
 			setModifiedCipherText(filteredInputString);
 			setStep(1);
 		} else if (step === 1) {
-			setKey(filteredInputString);
+			setKey(key);
 			setStep(2);
-			setSubstrings(splitString(filteredInputString));
+			const newSubstrings = splitString(filteredInputString);
+			setSubstrings(newSubstrings);
+			console.log("Number of substrings:", newSubstrings.length);
 		} else if (step > 1 && step <= 2 + substrings.length) {
 			setStep(step + 1); // Increment step only if current step is between 2 and 2 + substrings.length
 		} else {
@@ -105,21 +108,20 @@ const FiveFiveDynamic = () => {
 					<FiveFiveStatic cipherText={key} />
 				</>
 			)}
-			{step === 3 && substrings.length > 0 && (
+			{step > 2 && step <= 2 + substrings.length && (
 				<>
 					<br />
-					{substrings.map((substring, index) => (
-						<div key={index}>
-							<FilterInputText inputString={substring} />
-							<FiveFiveHighlight
-								cipherText={key}
-								charOne={substring[0]}
-								charTwo={substring[1]}
-							/>
-						</div>
-					))}
+					<div>
+						<FilterInputText inputString={substrings[step - 3]} />
+						<FiveFiveHighlight
+							cipherText={key}
+							charOne={substrings[step - 3][0]}
+							charTwo={substrings[step - 3][1]}
+						/>
+					</div>
 				</>
 			)}
+
 			<br />
 			<button onClick={handleNextClick}>Next</button>
 		</div>
