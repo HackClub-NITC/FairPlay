@@ -11,10 +11,14 @@ const FiveFiveStatic = ({ cipherText }) => {
 	];
 
 	// Convert the cipher text to uppercase and replace 'J' with 'I'
-	let modifiedCipherText = cipherText.toUpperCase().replace(/J/g, "I");
+	let modifiedCipherText = cipherText
+		.toUpperCase()
+		.replace(/J/g, "I")
+		.replace(/[^A-Z]/g, "");
 
 	modifiedCipherText = removeDuplicates(modifiedCipherText);
 
+	// Function to remove duplicate characters
 	function removeDuplicates(str) {
 		let uniqueChars = "";
 		for (let char of str) {
@@ -24,6 +28,9 @@ const FiveFiveStatic = ({ cipherText }) => {
 		}
 		return uniqueChars;
 	}
+
+	// console.log(modifiedCipherText);
+	let ogCipherLength = modifiedCipherText.length;
 
 	// Create a hash to keep track of letters used
 	const hash = {};
@@ -70,7 +77,7 @@ const FiveFiveStatic = ({ cipherText }) => {
 							className="box"
 							id={`${i}${j}`}
 							style={{
-								color: j + 5 * i < cipherText.length ? "green" : "black",
+								color: j + 5 * i < ogCipherLength ? "green" : "black",
 							}}
 						>
 							<p>
