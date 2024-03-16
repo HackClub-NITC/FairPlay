@@ -4,14 +4,15 @@ import "./App.css";
 
 import FilterInputText from "./components/FilterInputText/FilterInputText";
 
+import PlayfairCipher from "./components/FlayFairAnimation/PlayFairAnimation";
+
 
 function App() {
 	return (
 		<div className="App">
-			
-			<h1>Meow</h1>
+		
 
-			<FilterInputText inputString={"Meowsxyies"}/>
+			<PlayfairCipher />
 
 		</div>
 	);
