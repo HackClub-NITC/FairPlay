@@ -74,7 +74,7 @@ const FiveFiveDynamic = () => {
 					<br />
 					<FilterInputText inputString={modifiedCipherText} />
 					<br />
-					<FiveFiveHighlight cipherText={key} charOne={"K"} charTwo={"L"} />
+					<FiveFiveHighlight cipherText={key} charOne={"I"} charTwo={"L"} />
 				</>
 			)}
 			<br />

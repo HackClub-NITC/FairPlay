@@ -59,13 +59,20 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 	const [endI, endJ] = findCoordinates(charTwo);
 
 	function findCoordinates(char) {
-		const index = modifiedCipherText.indexOf(char);
+		let index = modifiedCipherText.indexOf(char);
+		if (index === -1 && (char === "I" || char === "J")) {
+			index = modifiedCipherText.indexOf("I/J");
+		}
 		if (index === -1) return [-1, -1];
 		return [Math.floor(index / 5), index % 5];
 	}
 
 	function isInBox(i, j) {
-		return i >= startI && i <= endI && j >= startJ && j <= endJ;
+		const minI = Math.min(startI, endI);
+		const maxI = Math.max(startI, endI);
+		const minJ = Math.min(startJ, endJ);
+		const maxJ = Math.max(startJ, endJ);
+		return i >= minI && i <= maxI && j >= minJ && j <= maxJ;
 	}
 
 	return (
