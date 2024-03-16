@@ -2,23 +2,25 @@
 import React from "react";
 import "./App.css";
 
+import FilterInputText from "./components/FilterInputText/FilterInputText";
+// import PlayfairCipher from "./components/FlayFairAnimation/PlayFairAnimation";
+import CipherForm from "./components/cipherForm/cipherForm";
+import StepSlideShow from "./components/StepSlideShow/StepSlideShow";
+import FiveFiveDynamic from "./components/FiveFiveDynamic/FiveFiveDynamic";
+import Chatbot from "./components/ChatBox/Chatbot";
+// import RadioToggle from "./components/RadioToggle/RadioToggle";
+// import Navbar from "./components/Navbar/Navbar";
+import Landing from "./components/Landing/Landing";
 
-import Landing from "./components/Landing/Landing.jsx";
-import Radio from "./components/Radio/Radio.jsx";
 
 
 function App() {
 	return (
-		<div>
-
-		<h1>qpiervb</h1>
-		<Landing />
-
-		<Radio />
+		<div className="App">
 
 
-
-
+			<FiveFiveDynamic />
+			<Chatbot />
 
 		</div>
 	);
