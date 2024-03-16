@@ -40,7 +40,7 @@ const FiveFiveStatic = ({ cipherText }) => {
 							className="box"
 							id={`${i}${j}`}
 							style={{
-								color: j + 5 * i < cipherText.length ? "green" : "black", // Set the color to green
+								color: j + 5 * i < cipherText.length ? "green" : "black",
 							}}
 						>
 							<p>
