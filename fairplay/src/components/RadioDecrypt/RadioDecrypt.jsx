@@ -5,7 +5,7 @@ import styles from './RadioDecrypt.module.css';
 
 const RadioDecrypt = () => {
   return (
-    <div className={styles.RadioDecrypt}>
+    <div >
       <h1>Decrypt</h1>
     </div>
   )

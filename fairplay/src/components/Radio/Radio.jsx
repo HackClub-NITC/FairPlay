@@ -1,5 +1,6 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
 
 
 const Radio = () => {
@@ -11,10 +12,10 @@ const Radio = () => {
         </TabList>
 
         <TabPanel>
-        <h2>Any content 1</h2>
+        <RadioEncrypt />
         </TabPanel>
         <TabPanel>
-        <h2>Any content 2</h2>
+        <RadioDecrypt />
         </TabPanel>
     </Tabs>
 
