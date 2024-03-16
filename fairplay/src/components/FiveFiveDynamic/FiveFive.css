@@ -1,0 +1,21 @@
+:root {
+	--size: 80px;
+}
+
+.box {
+	width: var(--size);
+	height: var(--size);
+	background-color: rgb(179, 179, 255);
+
+	border: 2px solid black;
+}
+
+.box:hover {
+	scale: 0.9;
+	transition: ease 0.3s;
+}
+
+.row {
+	display: flex;
+	flex-direction: row;
+}
