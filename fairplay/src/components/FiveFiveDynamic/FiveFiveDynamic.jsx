@@ -70,7 +70,10 @@ const FiveFiveDynamic = () => {
 			)}
 			{step === 3 && (
 				<>
-					<h2>test</h2>
+					<br />
+					<FilterInputText inputString={modifiedCipherText} />
+					<br />
+					<FiveFiveRange cipherText={key} charOne={"A"} charTwo={"B"} />
 				</>
 			)}
 			<br />
