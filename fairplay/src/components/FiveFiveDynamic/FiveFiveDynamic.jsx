@@ -1,56 +1,79 @@
 import React, { useState } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
+import FilterInputText from "../FilterInputText/FilterInputText";
 import "./FiveFive.css";
 
-const FiveFiveDynamic = ({ cipherText }) => {
+const FiveFiveDynamic = () => {
 	const [step, setStep] = useState(0);
 	const [modifiedCipherText, setModifiedCipherText] = useState("");
-
-	// Original 5x5 matrix
-	const matrix5x5 = [
-		[1, 2, 3, 4, 5],
-		[6, 7, 8, 9, 10],
-		[11, 12, 13, 14, 15],
-		[16, 17, 18, 19, 20],
-		[21, 22, 23, 24, 25],
-	];
-
-	// Function to remove duplicate characters
-	const removeDuplicates = (str) => {
-		let uniqueChars = "";
-		for (let char of str) {
-			if (!uniqueChars.includes(char)) {
-				uniqueChars += char;
-			}
-		}
-		return uniqueChars;
-	};
+	const [key, setKey] = useState("");
+	const [inputString, setInputString] = useState("");
 
 	// Function to handle the "Next" button click
 	const handleNextClick = () => {
 		if (step === 0) {
-			// If it's the first step, set modifiedCipherText to cipherText
-			setModifiedCipherText(
-				cipherText
-					.toUpperCase()
-					.replace(/J/g, "I")
-					.replace(/[^A-Z]/g, "")
-			);
+			setModifiedCipherText(inputString);
+			setStep(1);
+		} else if (step === 1) {
+			setKey(key);
+			setStep(2);
+		} else if (step === 2) {
+			// Additional steps can be handled here
+			setStep(3);
+		} else {
+			// Handle any additional steps here
 		}
-		setStep((prevStep) =>
-			prevStep < modifiedCipherText.length ? prevStep + 1 : prevStep
-		);
 	};
 
 	return (
 		<div>
-			{step === 0 ? (
-				// Render the dynamic FiveFive component for the initial step
-				<FiveFiveStatic cipherText={""} />
-			) : (
-				// Render the dynamic FiveFive component with the modified cipher text for subsequent steps
-				<FiveFiveStatic cipherText={modifiedCipherText} />
+			<label htmlFor="inputString">Input String:</label>
+			<input
+				type="text"
+				id="inputString"
+				value={inputString}
+				onChange={(e) => setInputString(e.target.value)}
+			/>
+			<br />
+			<br />
+			<label htmlFor="key">Key:</label>
+			<input
+				type="text"
+				id="key"
+				value={key}
+				onChange={(e) => setKey(e.target.value)}
+			/>
+			<br />
+			{step === 0 && (
+				<>
+					<br />
+					<FilterInputText inputString={""} />
+					<br />
+					<FiveFiveStatic cipherText="" />
+				</>
 			)}
+			{step === 1 && (
+				<>
+					<br />
+					<FilterInputText inputString={modifiedCipherText} />
+					<br />
+					<FiveFiveStatic cipherText="" />
+				</>
+			)}
+			{step === 2 && (
+				<>
+					<br />
+					<FilterInputText inputString={modifiedCipherText} />
+					<br />
+					<FiveFiveStatic cipherText={key} />
+				</>
+			)}
+			{step === 3 && (
+				<>
+					<h2>test</h2>
+				</>
+			)}
+			<br />
 			<button onClick={handleNextClick}>Next</button>
 		</div>
 	);
