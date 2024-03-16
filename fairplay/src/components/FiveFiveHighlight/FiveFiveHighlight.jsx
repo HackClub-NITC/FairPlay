@@ -10,7 +10,6 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 		[21, 22, 23, 24, 25],
 	];
 
-	// Convert the cipher text to uppercase and replace 'J' with 'I'
 	let modifiedCipherText = cipherText
 		.toUpperCase()
 		.replace(/J/g, "I")
@@ -18,7 +17,6 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 
 	modifiedCipherText = removeDuplicates(modifiedCipherText);
 
-	// Function to remove duplicate characters
 	function removeDuplicates(str) {
 		let uniqueChars = "";
 		for (let char of str) {
@@ -31,22 +29,15 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 
 	let ogCipherLength = modifiedCipherText.length;
 
-	// Create a hash to keep track of letters used
 	const hash = {};
-
-	// Iterate over the modifiedCipherText and mark the letters in the hash
 	for (let i = 0; i < modifiedCipherText.length; i++) {
 		if (modifiedCipherText[i] !== " ") {
-			// Exclude spaces
 			hash[modifiedCipherText[i]] = (hash[modifiedCipherText[i]] || 0) + 1;
-			if (modifiedCipherText[i] === "I") hash["J"] = 1; // Mark 'J' as used if 'I' is used
+			if (modifiedCipherText[i] === "I") hash["J"] = 1;
 		}
 	}
 
-	// Create a string to hold the unique letters for the cipher
 	let uniqueLetters = "";
-
-	// Iterate over the alphabet (excluding 'J') and add letters not in the hash to the uniqueLetters string
 	for (
 		let charCode = "A".charCodeAt(0);
 		charCode <= "Z".charCodeAt(0);
@@ -58,36 +49,49 @@ const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 		}
 	}
 
-	// Append 'J' if it hasn't been used
 	if (!hash["J"]) {
 		uniqueLetters += "J";
 	}
 
-	// Concatenate the uniqueLetters with the modifiedCipherText to ensure each letter appears only once
 	modifiedCipherText += uniqueLetters;
+
+	const [startI, startJ] = findCoordinates(charOne);
+	const [endI, endJ] = findCoordinates(charTwo);
+
+	function findCoordinates(char) {
+		const index = modifiedCipherText.indexOf(char);
+		if (index === -1) return [-1, -1];
+		return [Math.floor(index / 5), index % 5];
+	}
+
+	function isInBox(i, j) {
+		return i >= startI && i <= endI && j >= startJ && j <= endJ;
+	}
 
 	return (
 		<div>
 			{matrix5x5.map((row, i) => (
 				<div key={i} className={`row ${i}`}>
 					{row.map((_, j) => {
+						const currentIndex = (i * 5 + j) % modifiedCipherText.length;
 						const currentChar =
-							modifiedCipherText[(i * 5 + j) % modifiedCipherText.length];
-						const isHighlighted =
-							currentChar === charOne || currentChar === charTwo;
+							modifiedCipherText[currentIndex] === "I"
+								? "I/J"
+								: modifiedCipherText[currentIndex];
+						const highlightStyle = {
+							backgroundColor: isInBox(i, j) ? "yellow" : "",
+						};
 						return (
 							<div
 								key={j}
-								className={`box ${isHighlighted ? "highlight" : ""}`}
+								className="box"
 								id={`${i}${j}`}
 								style={{
-									color:
-										isHighlighted || j + 5 * i < ogCipherLength
-											? "green"
-											: "black",
+									...highlightStyle,
+									color: j + 5 * i < ogCipherLength ? "green" : "black",
 								}}
 							>
-								<p>{currentChar === "I" ? "I/J" : currentChar}</p>
+								<p>{currentChar}</p>
 							</div>
 						);
 					})}

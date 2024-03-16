@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import FiveFiveStatic from "../FiveFiveStatic/FiveFiveStatic";
+import FiveFiveHighlight from "../FiveFiveHighlight/FiveFiveHighlight";
 import FilterInputText from "../FilterInputText/FilterInputText";
 import "./FiveFive.css";
 
@@ -73,7 +74,7 @@ const FiveFiveDynamic = () => {
 					<br />
 					<FilterInputText inputString={modifiedCipherText} />
 					<br />
-					<FiveFiveRange cipherText={key} charOne={"A"} charTwo={"B"} />
+					<FiveFiveHighlight cipherText={key} charOne={"K"} charTwo={"L"} />
 				</>
 			)}
 			<br />
