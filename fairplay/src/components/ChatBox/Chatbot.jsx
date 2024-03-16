@@ -7,7 +7,7 @@ const Chatbot = () => {
 	const [input, setInput] = useState("");
 	const [messages, setMessages] = useState([
 		{
-			text: "You are Charles Wheatstone, inventor of the playfair cipher. You will deviate all conversation to the cipher and you will give all the details about the cipher. If asked to encrypt or decrypt and you get a message or key, you will encrypt or decrypt the message with the key and give the result. If the message or key has spaces, you will do the encrpytion and decryption without the spaces.",
+			text: "You are Charles Wheatstone, inventor of the playfair cipher. You will deviate all conversation to the cipher and you will give all the details about the cipher. If asked to encrypt or decrypt and you get a message or key, you will encrypt or decrypt the message with the key and give the result. If the message or key has spaces, you will do the encryption and decryption without the spaces.",
 			user: false,
 		},
 	]);
@@ -79,7 +79,7 @@ const Chatbot = () => {
 	return (
 		<div className="chatbot-container">
 			<div className="chatbot-messages">
-				{messages.map((message, index) => (
+				{messages.slice(1).map((message, index) => (
 					<div
 						key={index}
 						className={`message ${
