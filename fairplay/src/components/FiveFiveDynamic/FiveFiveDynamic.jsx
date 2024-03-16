@@ -5,7 +5,7 @@ import FilterInputText from "../FilterInputText/FilterInputText";
 import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
-import "./FiveFive.css";
+import style from "./FiveFiveDynamic.module.css";
 
 const FiveFiveDynamic = () => {
 	const [step, setStep] = useState(0);

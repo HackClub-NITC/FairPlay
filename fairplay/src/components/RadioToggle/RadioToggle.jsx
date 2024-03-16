@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import styles from './RadioToggle.module.css';
+
 import RadioEncrypt from '../RadioEncrypt/RadioEncrypt';
 import RadioDecrypt from '../RadioDecrypt/RadioDecrypt';
-import styles from './RadioToggle.module.css';
+
 
 
 function RadioToggle() {

@@ -1,13 +1,14 @@
 import React from 'react';
 
-import './styles.css';
+import styles from './RadioDecrypt.module.css';
 
-const DeEncrypt = () => {
+
+const RadioDecrypt = () => {
   return (
-    <div>
+    <div className={styles.RadioDecrypt}>
       <h1>Decrypt</h1>
     </div>
   )
 }
 
-export default Decrypt
+export default RadioDecrypt
