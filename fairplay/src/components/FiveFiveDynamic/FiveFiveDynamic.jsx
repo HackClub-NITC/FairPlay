@@ -9,21 +9,57 @@ const FiveFiveDynamic = () => {
 	const [modifiedCipherText, setModifiedCipherText] = useState("");
 	const [key, setKey] = useState("");
 	const [inputString, setInputString] = useState("");
+	const [substrings, setSubstrings] = useState([]);
+
+	// Function to filter the input string
+	const filterString = (str) => {
+		// Remove spaces, numbers, and special characters from the string
+		str = str
+			.replace(/\s/g, "")
+			.replace(/[0-9]/g, "")
+			.replace(/[^A-Za-z]/g, "");
+
+		let filteredStr = "";
+		for (let i = 0; i < str.length; i++) {
+			// If two adjacent characters are the same, insert an 'x' in between
+			filteredStr += str[i];
+			if (i < str.length - 1 && str[i] === str[i + 1]) {
+				filteredStr += "x";
+			}
+		}
+		// If the length of the string is odd, add 'x' at the end
+		if (filteredStr.length % 2 !== 0) {
+			filteredStr += "x";
+		}
+		return filteredStr;
+	};
 
 	// Function to handle the "Next" button click
 	const handleNextClick = () => {
+		let filteredInputString = filterString(inputString).toUpperCase();
+		console.log(filteredInputString);
+		console.log(step);
 		if (step === 0) {
-			setModifiedCipherText(inputString);
+			setModifiedCipherText(filteredInputString);
 			setStep(1);
 		} else if (step === 1) {
-			setKey(key);
+			setKey(filteredInputString);
 			setStep(2);
-		} else if (step === 2) {
-			// Additional steps can be handled here
-			setStep(3);
+			setSubstrings(splitString(filteredInputString));
+		} else if (step > 1 && step <= 2 + substrings.length) {
+			setStep(step + 1); // Increment step only if current step is between 2 and 2 + substrings.length
 		} else {
 			// Handle any additional steps here
 		}
+	};
+
+	// Function to split the string into substrings of two characters
+	const splitString = (str) => {
+		const substrings = [];
+		for (let i = 0; i < str.length; i += 2) {
+			substrings.push(str.slice(i, i + 2));
+		}
+		return substrings;
 	};
 
 	return (
@@ -48,7 +84,7 @@ const FiveFiveDynamic = () => {
 			{step === 0 && (
 				<>
 					<br />
-					<FilterInputText inputString={""} />
+					<FilterInputText inputString={modifiedCipherText} />
 					<br />
 					<FiveFiveStatic cipherText="" />
 				</>
@@ -69,12 +105,19 @@ const FiveFiveDynamic = () => {
 					<FiveFiveStatic cipherText={key} />
 				</>
 			)}
-			{step === 3 && (
+			{step === 3 && substrings.length > 0 && (
 				<>
 					<br />
-					<FilterInputText inputString={modifiedCipherText} />
-					<br />
-					<FiveFiveHighlight cipherText={key} charOne={"I"} charTwo={"L"} />
+					{substrings.map((substring, index) => (
+						<div key={index}>
+							<FilterInputText inputString={substring} />
+							<FiveFiveHighlight
+								cipherText={key}
+								charOne={substring[0]}
+								charTwo={substring[1]}
+							/>
+						</div>
+					))}
 				</>
 			)}
 			<br />
