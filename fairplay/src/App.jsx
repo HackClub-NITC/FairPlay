@@ -2,17 +2,21 @@
 import React from "react";
 import "./App.css";
 
-import FilterInputText from "./components/FilterInputText/FilterInputText";
 
 import PlayfairCipher from "./components/FlayFairAnimation/PlayFairAnimation";
+
+import CipherForm from "./components/cipherForm";
+import RadioToggle from "./components/RadioToggle/RadioToggle";
 
 
 function App() {
 	return (
 		<div className="App">
-		
 
-			<PlayfairCipher />
+
+			<RadioToggle />
+
+
 
 		</div>
 	);
