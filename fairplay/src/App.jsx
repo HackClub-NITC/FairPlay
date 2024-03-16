@@ -13,11 +13,6 @@ import FiveFiveDynamic from "./components/FiveFiveDynamic/FiveFiveDynamic";
 function App() {
 	return (
 		<div className="App">
-			<h1>Playfair Cipher</h1>
-			<CipherForm />
-			<br />
-			<h1>Steps</h1>
-			<br />
 			<FiveFiveDynamic />
 		</div>
 	);
