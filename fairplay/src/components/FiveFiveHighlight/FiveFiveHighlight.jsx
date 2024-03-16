@@ -1,7 +1,7 @@
 import React from "react";
 import "./FiveFive.css";
 
-const FiveFiveHighlight = ({ cipherText }) => {
+const FiveFiveHighlight = ({ cipherText, charOne, charTwo }) => {
 	const matrix5x5 = [
 		[1, 2, 3, 4, 5],
 		[6, 7, 8, 9, 10],
@@ -29,7 +29,6 @@ const FiveFiveHighlight = ({ cipherText }) => {
 		return uniqueChars;
 	}
 
-	// console.log(modifiedCipherText);
 	let ogCipherLength = modifiedCipherText.length;
 
 	// Create a hash to keep track of letters used
@@ -71,23 +70,27 @@ const FiveFiveHighlight = ({ cipherText }) => {
 		<div>
 			{matrix5x5.map((row, i) => (
 				<div key={i} className={`row ${i}`}>
-					{row.map((_, j) => (
-						<div
-							key={j}
-							className="box"
-							id={`${i}${j}`}
-							style={{
-								color: j + 5 * i < ogCipherLength ? "green" : "black",
-							}}
-						>
-							<p>
-								{modifiedCipherText[(i * 5 + j) % modifiedCipherText.length] ===
-								"I"
-									? "I/J"
-									: modifiedCipherText[(i * 5 + j) % modifiedCipherText.length]}
-							</p>
-						</div>
-					))}
+					{row.map((_, j) => {
+						const currentChar =
+							modifiedCipherText[(i * 5 + j) % modifiedCipherText.length];
+						const isHighlighted =
+							currentChar === charOne || currentChar === charTwo;
+						return (
+							<div
+								key={j}
+								className={`box ${isHighlighted ? "highlight" : ""}`}
+								id={`${i}${j}`}
+								style={{
+									color:
+										isHighlighted || j + 5 * i < ogCipherLength
+											? "green"
+											: "black",
+								}}
+							>
+								<p>{currentChar === "I" ? "I/J" : currentChar}</p>
+							</div>
+						);
+					})}
 				</div>
 			))}
 		</div>
