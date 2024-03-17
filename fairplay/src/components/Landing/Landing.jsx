@@ -20,7 +20,7 @@ const Landing = () => {
 				An educational site to use and study the Playfair Cipher
 			</h2>
 			<br />
-			<img src={rome} alt="rome" className={styles.rome} />
+			{/* <img src={rome} alt="rome" className={styles.rome} /> */}
 			<img src={detective} alt="detective" className={styles.detective} />
 
 			<CipherForm />
