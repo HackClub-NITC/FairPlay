@@ -11,6 +11,12 @@
 	margin: auto;
 }
 
+.titleText {
+	font-size: 2vw;
+	margin: auto;
+	color: black;
+}
+
 .detective {
 	position: fixed;
 	bottom: 0;

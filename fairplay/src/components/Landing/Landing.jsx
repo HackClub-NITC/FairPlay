@@ -15,10 +15,13 @@ const Landing = () => {
 	return (
 		<div className={styles.Landing}>
 			<img src={title_t} alt="title" className={styles.title} />
+			<h2 className={styles.titleText}>
+				An educational site to use and study the Playfair Cipher
+			</h2>
 			<br />
 			<img src={rome} alt="rome" className={styles.rome} />
 			<img src={detective} alt="detective" className={styles.detective} />
-			<br />
+
 			<CipherForm />
 			<br />
 
