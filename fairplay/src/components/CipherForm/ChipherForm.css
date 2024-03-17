@@ -14,11 +14,13 @@
 
 }
 
+
 .Main label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
     color: #000;
+    font-size: 22px;
 }
 
 .inputBox {
@@ -27,7 +29,7 @@
     margin-bottom: 20px;
     border: 1px solid #888;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 22px;
     font-family: "Times New Roman", Times, serif;
     background-color: #f9f9f9;
     color: #333;
