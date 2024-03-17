@@ -39,10 +39,11 @@ function CipherForm() {
 	return (
 		<div className={style.CipherForm}>
 			<form onSubmit={handleSubmit}>
-				<div>
+				<div className={style.inputbox}>
 					<div>
 						<label htmlFor="plainText">Plain Text:</label>
 						<input
+							className={style.input}
 							type="text"
 							id="plainText"
 							value={plainText}
@@ -62,19 +63,18 @@ function CipherForm() {
 					)}
 					<br />
 					<label htmlFor="key">Key:</label>
-					<input type="text" id="key" value={key} onChange={handleKeyChange} />
+					<input className={style.input} type="text" id="key" value={key} onChange={handleKeyChange} />
 				</div>
-
+			</form>
 				<br />
 				<FiveFiveStatic cipherText={key} />
 				<br />
-
-				<button type="submit">Encrypt</button>
-			</form>
-
+			<div className="button_box">
+			
+			<button type="submit">Encrypt</button>
 			<button onClick={handleDecrypt}>Decrypt</button>
-			<br />
-			{cipherText && <div class="">Encrypted Text: {cipherText}</div>}
+			</div>
+			{cipherText && <div>Encrypted Text: {cipherText}</div>}
 			<br />
 			{decryptedText && <div>Decrypted Text: {decryptedText}</div>}
 		</div>
