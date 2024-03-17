@@ -51,10 +51,9 @@ FairPlay features an AI-powered chatbot powered by GPT (Generative Pre-trained T
 
 ## Tech Stack
 
-- Backend: Javascript
-- Frontend: ReactJS, CSS
-- Framworks: NodeJS, ViteJs 
-- AI Engine: OpenAI's GPT-4-turbo
+- Frontend frameworks: ReactJS
+- Backend frameworks: NodeJS, ViteJs 
+- AI Engine: OpenAI's GPT-3.5-turbo
 
 ## Authors
 
