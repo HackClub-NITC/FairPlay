@@ -1,0 +1,41 @@
+/* styles.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap');
+
+
+.container {
+  margin-bottom: 3rem;
+}
+
+.container-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.result {
+  margin-top: 2rem;
+}
+
+/* Add more styles as needed */
+header{
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Frank Ruhl Libre', sans-serif;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  font-family: 'Frank Ruhl Libre', sans-serif;
+  height: 100vh;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.ctn{
+  margin: 80 auto;
+}

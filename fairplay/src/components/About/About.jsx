@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
+import './styles.module.css';
+  const [section, setSection] = useState('cplus'); // Default section is 'cplus'
+  //const [videoUrl, setVideoUrl] = useState('');
+  const videoUrl = "https://www.youtube.com/watch?v=SqcY0GlETPk&t=1825s";
 
+  const handleSectionChange = (newSection) => {
+    setSection(newSection);
+  };
+
+  const handleVideoChange = (url) => {
+    setVideoUrl(url);
+  };
 function CPlusPlusCodeComponent() {
     const [copied, setCopied] = useState(false);
     const cplusCode = `// C++ program to implement Playfair Cipher
-
+    
   #include <bits/stdc++.h>
   using namespace std;
   #define SIZE 30
@@ -187,10 +198,9 @@ function CPlusPlusCodeComponent() {
   
   return (
     <div>
-      <label style={{ textAlign: 'left' }}>C++ Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{cplusCode}</code>
-      </pre>
+     <label >C++ Code:</label>
+      <pre >
+        <code>{cplusCode}</code></pre>
       <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
     </div>
   );
@@ -386,10 +396,9 @@ const handleCopyClick = () => {
     
   return (
     <div>
-      <label style={{ textAlign: 'left' }}>C Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{cCode}</code>
-      </pre>
+      <label >C Code:</label>
+      <pre >
+        <code>{cCode}</code></pre>
       <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
     </div>
   );
@@ -596,8 +605,8 @@ const handleCopyClick = () => {
 
   return (
     <div>
-      <label style={{ textAlign: 'left' }}>Java Code:</label>
-      <pre style={{ textAlign: 'left' }}>
+      <label >Java Code:</label>
+      <pre >
         <code>{JavaCode}</code>
       </pre>
       <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
@@ -797,8 +806,8 @@ const handleCopyClick = () => {
 
   return (
     <div>
-      <label style={{ textAlign: 'left' }}>Python Code:</label>
-      <pre style={{ textAlign: 'left' }}>
+      <label >Python Code:</label>
+      <pre >
         <code>{PythonCode}</code>
       </pre>
       <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
@@ -974,10 +983,9 @@ const handleCopyClick = () => {
 
   return (
     <div>
-      <label style={{ textAlign: 'left' }}>Javascript Code:</label>
-      <pre style={{ textAlign: 'left' }}>
-        <code>{JavascriptCode}</code>
-      </pre>
+      <label >Javascript Code:</label>
+      <pre >
+        <code>{JavascriptCode}</code></pre>
       <button onClick={handleCopyClick}>{copied ? 'Copied!' : 'Copy to Clipboard'}</button>
     </div>
   );
@@ -992,76 +1000,96 @@ function PlayfairCipher() {
   
     return (
       <>
-        <header>
-          <h1>About PlayFair Cypher</h1>
-        </header>
-        <main>
-        <p>The Playfair cipher is a symmetric encryption technique that uses a 5x5 grid of letters to encrypt pairs of letters in plaintext.</p>
-<ol >
-  <li><strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY") and construct a 5x5 grid (ignoring duplicate letters in the keyword and excluding 'J'). Fill the grid with the remaining letters of the alphabet, omitting 'J' (e.g., using "I" instead of "J").</li>
-  <li><strong>Encryption Rules</strong>:
-    <ul >
-      <li >Replace any 'J' with 'I'.</li>
-      <li>Split the plaintext into pairs of letters (e.g., "HELLO" becomes "HE LX LO").</li>
-      <li>If both letters in a pair are the same, add an 'X' between them (e.g., "HELLO" becomes "HE LX LO").</li>
-      <li>If the pairs have an odd number of letters, add an 'X' at the end to make it even.</li>
-      <li>For each pair of letters:
-        <ul>
-          <li>If they are in the same row, replace them with the letters to their immediate right (wrapping around to the left if at the end of a row).</li>
-          <li>If they are in the same column, replace them with the letters immediately below (wrapping around to the top if at the bottom of a column).</li>
-          <li>If they form a rectangle, replace them with the letters on the same row but at the other pair of corners of the rectangle.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li><strong>Decryption</strong>: To decrypt a message, reverse the process by finding the corresponding letters in the grid based on the rules above.</li>
-</ol>
-<p>The Playfair cipher was used historically for secure communication, but it is no longer considered secure against modern cryptographic attacks.</p>
-          <div style={{ marginBottom: '3rem' }}>
-            <nav className="container-btn">
-              <button onClick={() => handleSectionChange('cplus')}>C++</button>
-              <button onClick={() => handleSectionChange('c')}>C</button>
-              <button onClick={() => handleSectionChange('java')}>Java</button>
-              <button onClick={() => handleSectionChange('python')}>Python3</button>
-              <button onClick={() => handleSectionChange('js')}>JavaScript</button>
-            </nav>
-          </div>
-          {section === 'cplus' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <CPlusPlusCodeComponent />
+        <div className='ctn' style={{ margin: 'auto 80' }}>
+          <header>
+            <h1>About PlayFair Cipher</h1>
+          </header>
+          <main>
+            <div className="container">
+              <p>The Playfair cipher is a symmetric encryption technique that uses a 5x5 grid of letters to encrypt pairs of letters in plaintext.</p>
+              <ol>
+                <li><strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY") and construct a 5x5 grid (ignoring duplicate letters in the keyword and excluding 'J'). Fill the grid with the remaining letters of the alphabet, omitting 'J' (e.g., using "I" instead of "J").</li>
+                <li><strong>Encryption Rules</strong>:
+                  <ul>
+                    <li>Replace any 'J' with 'I'.</li>
+                    <li>Split the plaintext into pairs of letters (e.g., "HELLO" becomes "HE LX LO").</li>
+                    <li>If both letters in a pair are the same, add an 'X' between them (e.g., "HELLO" becomes "HE LX LO").</li>
+                    <li>If the pairs have an odd number of letters, add an 'X' at the end to make it even.</li>
+                    <li>For each pair of letters:
+                      <ul>
+                        <li>If they are in the same row, replace them with the letters to their immediate right (wrapping around to the left if at the end of a row).</li>
+                        <li>If they are in the same column, replace them with the letters immediately below (wrapping around to the top if at the bottom of a column).</li>
+                        <li>If they form a rectangle, replace them with the letters on the same row but at the other pair of corners of the rectangle.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><strong>Decryption</strong>: To decrypt a message, reverse the process by finding the corresponding letters in the grid based on the rules above.</li>
+              </ol>
+              <p>The Playfair cipher was used historically for secure communication, but it is no longer considered secure against modern cryptographic attacks.</p>
+              <div style={{ marginBottom: '3rem' }}>
+                <nav className="styles.container-btn">
+                  <button onClick={() => handleSectionChange('cplus')}>C++</button>
+                  <button onClick={() => handleSectionChange('c')}>C</button>
+                  <button onClick={() => handleSectionChange('java')}>Java</button>
+                  <button onClick={() => handleSectionChange('python')}>Python3</button>
+                  <button onClick={() => handleSectionChange('js')}>JavaScript</button>
+                </nav>
               </div>
-            </section>
-          )}
-          {section === 'c' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <CCodeComponent />
+              <div className="code-container">
+                {section === 'cplus' && (
+                  <section id="encryptSection" className="">
+                    <div className="styles.result">
+                      <CPlusPlusCodeComponent />
+                    </div>
+                  </section>
+                )}
+                {section === 'c' && (
+                  <section id="encryptSection" className="">
+                    <div className="styles.result" style={{alignContent: 'center'}}>
+                      <CCodeComponent />
+                    </div>
+                  </section>
+                )}
+                {section === 'java' && (
+                  <section id="encryptSection" className="">
+                    <div className="styles.result">
+                      <JavaCodeComponent />
+                    </div>
+                  </section>
+                )}
+                {section === 'python' && (
+                  <section id="encryptSection" className="">
+                    <div className="styles.result">
+                      <PythonCodeComponent />
+                    </div>
+                  </section>
+                )}
+                {section === 'js' && (
+                  <section id="encryptSection" className="">
+                    <div className="styles.result">
+                      <JavascriptCodeComponent />
+                    </div>
+                  </section>
+                )}
               </div>
-            </section>
-          )}
-          {section === 'java' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <JavaCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'python' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <PythonCodeComponent />
-              </div>
-            </section>
-          )}
-          {section === 'js' && (
-            <section id="encryptSection" className="">
-              <div className="result">
-                <JavascriptCodeComponent />
-              </div>
-            </section>
-          )}
-        </main>
+              {/* Embed YouTube video */}
+              {videoUrl && (
+                <div className="video-container">
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={videoUrl}
+                    title="YouTube Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+            </div>
+          </main>
+        </div>
       </>
     );
   }
