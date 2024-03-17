@@ -1,24 +1,31 @@
-import React from 'react'
+import React from "react";
 
-import styles from './Landing.module.css';
+import styles from "./Landing.module.css";
 
-import detective from './assets/detective.svg';
-import rome from './assets/rome.png';
-import Radio from '../Radio/Radio';
-import FiveFiveDynamic from '../FiveFiveDynamic/FiveFiveDynamic';
+import detective from "./assets/detective.svg";
+import rome from "./assets/rome.png";
+import title_t from "./assets/title_t.png";
 
+import Radio from "../Radio/Radio";
+import FiveFiveDynamic from "../FiveFiveDynamic/FiveFiveDynamic";
+import ChatbotButton from "../ChatBox/ChatBotButton";
+import CipherForm from "../CipherForm/CipherForm";
 
 const Landing = () => {
-  return (
-    <div className={styles.Landing}>
-      <img src={rome} alt="rome" className={styles.rome} />
-      <img src={detective} alt="detective" className={styles.detective} />  
+	return (
+		<div className={styles.Landing}>
+			<img src={title_t} alt="title" className={styles.title} />
+			<br />
+			<img src={rome} alt="rome" className={styles.rome} />
+			<img src={detective} alt="detective" className={styles.detective} />
+			<br />
+			<CipherForm />
+			<br />
 
-      <FiveFiveDynamic />
-      
+			<FiveFiveDynamic />
+			<ChatbotButton />
+		</div>
+	);
+};
 
-    </div>
-  )
-}
-
-export default Landing
+export default Landing;

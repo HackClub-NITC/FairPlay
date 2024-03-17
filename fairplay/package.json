@@ -21,6 +21,7 @@
     "axios": "^1.6.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-tabs": "^6.0.2",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
