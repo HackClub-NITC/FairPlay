@@ -3,7 +3,7 @@
 	bottom: 0;
 	left: 0;
 
-	width: 18vw;
+	width: 16vw;
 }
 
 .title {
@@ -22,7 +22,7 @@
 	bottom: 0;
 	right: 0;
 
-	width: 18vw;
+	width: 16vw;
 }
 
 .Landing {
@@ -39,5 +39,4 @@
 	background-attachment: fixed; /* Make the background image fixed */
 
 	overflow-x: hidden;
-
 }

@@ -110,7 +110,7 @@ const FiveFiveHighlight = ({
 								id={`${i}${j}`}
 								style={{
 									...highlightStyle,
-									color: j + 5 * i < ogCipherLength ? "green" : "black",
+									color: j + 5 * i < ogCipherLength ? "white" : "black",
 								}}
 							>
 								<p>{currentChar}</p>
