@@ -10,6 +10,9 @@
 
 .CipherForm {
 	background-color: rgba(89, 75, 61, 0.8);
+	width: 80%;
+	margin: auto;
+	padding: 20px;
 }
 
 .flexThing {
