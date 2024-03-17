@@ -19,6 +19,7 @@ const FiveFiveDynamic = () => {
 	const [flag, setFlag] = useState(1); // Initialize flag with 1
 	const [isPlaying, setIsPlaying] = useState(false); // State to track play/pause
 	const timerRef = useRef(null); // Reference to the timer
+	const additionalDataParagraphRef = useRef(null);
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
@@ -159,7 +160,9 @@ const FiveFiveDynamic = () => {
 					<p
 						id="additionalDataParagraph"
 						className={style.additionalDataParagraph}
-					></p>
+					>
+						Enter a Key and the Text to be Encrypted. Click Next to continue.
+					</p>
 				</div>
 			</div>
 

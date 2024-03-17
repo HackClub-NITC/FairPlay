@@ -45,6 +45,7 @@
 	display: block;
 	margin-bottom: 10px;
 	font-weight: bold;
+	color: #000;
 }
 
 .inputBox {
@@ -110,5 +111,6 @@
 
 .additionalDataParagraph {
 	color: black; /* Set the color to black */
-	font-size: 1.5rem; /* Set the font size to 1.5rem */
+	font-size: 1.2rem; /* Set the font size to 1.5rem */
+	max-width: 300px;
 }
