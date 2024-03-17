@@ -2,6 +2,8 @@
 
 :root {
 	--size: 10vw;
+
+	--size2: 3vw;
 }
 
 .box {
