@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./About.module.css";
 
 function CPlusPlusCodeComponent() {
 	const [copied, setCopied] = useState(false);
@@ -993,7 +994,7 @@ console.log("Cipher text: " + encryptByPlayfairCipher(str, key));
 	);
 }
 
-function PlayfairCipher() {
+function AboutPage() {
 	const [section, setSection] = useState("cplus"); // Default section is 'cplus'
 
 	const handleSectionChange = (newSection) => {
@@ -1002,119 +1003,122 @@ function PlayfairCipher() {
 
 	return (
 		<>
-			<header>
-				<h1>About PlayFair Cypher</h1>
-			</header>
-			<main>
-				<p>
-					The Playfair cipher is a symmetric encryption technique that uses a
-					5x5 grid of letters to encrypt pairs of letters in plaintext.
-				</p>
-				<ol>
-					<li>
-						<strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY") and
-						construct a 5x5 grid (ignoring duplicate letters in the keyword and
-						excluding 'J'). Fill the grid with the remaining letters of the
-						alphabet, omitting 'J' (e.g., using "I" instead of "J").
-					</li>
-					<li>
-						<strong>Encryption Rules</strong>:
-						<ul>
-							<li>Replace any 'J' with 'I'.</li>
-							<li>
-								Split the plaintext into pairs of letters (e.g., "HELLO" becomes
-								"HE LX LO").
-							</li>
-							<li>
-								If both letters in a pair are the same, add an 'X' between them
-								(e.g., "HELLO" becomes "HE LX LO").
-							</li>
-							<li>
-								If the pairs have an odd number of letters, add an 'X' at the
-								end to make it even.
-							</li>
-							<li>
-								For each pair of letters:
-								<ul>
-									<li>
-										If they are in the same row, replace them with the letters
-										to their immediate right (wrapping around to the left if at
-										the end of a row).
-									</li>
-									<li>
-										If they are in the same column, replace them with the
-										letters immediately below (wrapping around to the top if at
-										the bottom of a column).
-									</li>
-									<li>
-										If they form a rectangle, replace them with the letters on
-										the same row but at the other pair of corners of the
-										rectangle.
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</li>
-					<li>
-						<strong>Decryption</strong>: To decrypt a message, reverse the
-						process by finding the corresponding letters in the grid based on
-						the rules above.
-					</li>
-				</ol>
-				<p>
-					The Playfair cipher was used historically for secure communication,
-					but it is no longer considered secure against modern cryptographic
-					attacks.
-				</p>
-				<div style={{ marginBottom: "3rem" }}>
-					<nav className="container-btn">
-						<button onClick={() => handleSectionChange("cplus")}>C++</button>
-						<button onClick={() => handleSectionChange("c")}>C</button>
-						<button onClick={() => handleSectionChange("java")}>Java</button>
-						<button onClick={() => handleSectionChange("python")}>
-							Python3
-						</button>
-						<button onClick={() => handleSectionChange("js")}>
-							JavaScript
-						</button>
-					</nav>
-				</div>
-				{section === "cplus" && (
-					<section id="encryptSection" className="">
-						<div className="result">
-							<CPlusPlusCodeComponent />
-						</div>
-					</section>
-				)}
-				{section === "c" && (
-					<section id="encryptSection" className="">
-						<div className="result">
-							<CCodeComponent />
-						</div>
-					</section>
-				)}
-				{section === "java" && (
-					<section id="encryptSection" className="">
-						<div className="result">
-							<JavaCodeComponent />
-						</div>
-					</section>
-				)}
-				{section === "python" && (
-					<section id="encryptSection" className="">
-						<div className="result">
-							<PythonCodeComponent />
-						</div>
-					</section>
-				)}
-				{section === "js" && (
-					<section id="encryptSection" className="">
-						<div className="result">
-							<JavascriptCodeComponent />
-						</div>
-					</section>
-				)}
-			</main>
+			<div className={styles.moduleContainer}>
+				<header>
+					<h1>About PlayFair Cypher</h1>
+				</header>
+				<main>
+					<p>
+						The Playfair cipher is a symmetric encryption technique that uses a
+						5x5 grid of letters to encrypt pairs of letters in plaintext.
+					</p>
+					<ol>
+						<li>
+							<strong>Key Setup</strong>: Choose a keyword (e.g., "MONARCHY")
+							and construct a 5x5 grid (ignoring duplicate letters in the
+							keyword and excluding 'J'). Fill the grid with the remaining
+							letters of the alphabet, omitting 'J' (e.g., using "I" instead of
+							"J").
+						</li>
+						<li>
+							<strong>Encryption Rules</strong>:
+							<ul>
+								<li>Replace any 'J' with 'I'.</li>
+								<li>
+									Split the plaintext into pairs of letters (e.g., "HELLO"
+									becomes "HE LX LO").
+								</li>
+								<li>
+									If both letters in a pair are the same, add an 'X' between
+									them (e.g., "HELLO" becomes "HE LX LO").
+								</li>
+								<li>
+									If the pairs have an odd number of letters, add an 'X' at the
+									end to make it even.
+								</li>
+								<li>
+									For each pair of letters:
+									<ul>
+										<li>
+											If they are in the same row, replace them with the letters
+											to their immediate right (wrapping around to the left if
+											at the end of a row).
+										</li>
+										<li>
+											If they are in the same column, replace them with the
+											letters immediately below (wrapping around to the top if
+											at the bottom of a column).
+										</li>
+										<li>
+											If they form a rectangle, replace them with the letters on
+											the same row but at the other pair of corners of the
+											rectangle.
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<strong>Decryption</strong>: To decrypt a message, reverse the
+							process by finding the corresponding letters in the grid based on
+							the rules above.
+						</li>
+					</ol>
+					<p>
+						The Playfair cipher was used historically for secure communication,
+						but it is no longer considered secure against modern cryptographic
+						attacks.
+					</p>
+					<div style={{ marginBottom: "3rem" }}>
+						<nav className="container-btn">
+							<button onClick={() => handleSectionChange("cplus")}>C++</button>
+							<button onClick={() => handleSectionChange("c")}>C</button>
+							<button onClick={() => handleSectionChange("java")}>Java</button>
+							<button onClick={() => handleSectionChange("python")}>
+								Python3
+							</button>
+							<button onClick={() => handleSectionChange("js")}>
+								JavaScript
+							</button>
+						</nav>
+					</div>
+					{section === "cplus" && (
+						<section id="encryptSection" className="">
+							<div className="result">
+								<CPlusPlusCodeComponent />
+							</div>
+						</section>
+					)}
+					{section === "c" && (
+						<section id="encryptSection" className="">
+							<div className="result">
+								<CCodeComponent />
+							</div>
+						</section>
+					)}
+					{section === "java" && (
+						<section id="encryptSection" className="">
+							<div className="result">
+								<JavaCodeComponent />
+							</div>
+						</section>
+					)}
+					{section === "python" && (
+						<section id="encryptSection" className="">
+							<div className="result">
+								<PythonCodeComponent />
+							</div>
+						</section>
+					)}
+					{section === "js" && (
+						<section id="encryptSection" className="">
+							<div className="result">
+								<JavascriptCodeComponent />
+							</div>
+						</section>
+					)}
+				</main>
+			</div>
 		</>
 	);
 }

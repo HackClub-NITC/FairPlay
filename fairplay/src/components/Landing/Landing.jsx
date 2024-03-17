@@ -10,6 +10,7 @@ import Radio from "../Radio/Radio";
 import FiveFiveDynamic from "../FiveFiveDynamic/FiveFiveDynamic";
 import ChatbotButton from "../ChatBox/ChatBotButton";
 import CipherForm from "../CipherForm/CipherForm";
+import AboutPage from "../About/about";
 
 const Landing = () => {
 	return (
@@ -27,6 +28,8 @@ const Landing = () => {
 
 			<FiveFiveDynamic />
 			<ChatbotButton />
+			<br />
+			<AboutPage />
 		</div>
 	);
 };
