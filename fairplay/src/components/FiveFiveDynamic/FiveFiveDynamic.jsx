@@ -153,32 +153,60 @@ const FiveFiveDynamic = () => {
 
 			{step === 0 && (
 				<>
-					<br />
-					<FilterInputText inputString={modifiedCipherText} />
-					<br />
-					<FiveFiveStatic cipherText="" />
+					<div><br />
+						<FiveFiveStatic cipherText="" />
+						<br />
+						<FilterInputText inputString={modifiedCipherText} />
+					</div>
+					
 				</>
 			)}
 			{step === 1 && (
 				<>
-					<br />
-					<FilterInputText inputString={modifiedCipherText} />
-					<br />
-					<FiveFiveStatic cipherText="" />
+					<div>
+						<br />
+						<FiveFiveStatic cipherText="" />
+						<br />
+						<FilterInputText inputString={modifiedCipherText} />
+					</div>
+					
 				</>
 			)}
 			{step === 2 && (
 				<>
-					<br />
-					<FilterInputText inputString={modifiedCipherText} />
-					<br />
-					<FiveFiveStatic cipherText={key} />
+					<div>
+						<br />
+						<FiveFiveStatic cipherText={key} />
+						<br />
+						<FilterInputText inputString={modifiedCipherText} />
+					</div>
+					
 				</>
 			)}
 			{step > 2 && step <= 2 + 2 * substrings.length && (
 				<>
+
+				<div className={style.Step_box}>
+
 					<br />
 					<div>
+					{flag === -1 && (
+							<FiveFiveHighlight
+								cipherText={key}
+								charOne={substrings[Math.floor((step - 3) / 2)][0]}
+								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+							/>
+						)}
+						{flag === 1 && (
+							<FiveFiveHighlight
+								cipherText={key}
+								charOne={substrings[Math.floor((step - 3) / 2)][0]}
+								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+								charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
+								charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
+							/>
+						)}
+						<br />
 						<SubstringDisplay
 							substrings={substrings}
 							length={substrings.length}
@@ -196,22 +224,8 @@ const FiveFiveDynamic = () => {
 							encrypted={true} // Indicate that these substrings are encrypted
 						/>
 						<br />
-						{flag === -1 && (
-							<FiveFiveHighlight
-								cipherText={key}
-								charOne={substrings[Math.floor((step - 3) / 2)][0]}
-								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-							/>
-						)}
-						{flag === 1 && (
-							<FiveFiveHighlight
-								cipherText={key}
-								charOne={substrings[Math.floor((step - 3) / 2)][0]}
-								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-								charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
-								charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
-							/>
-						)}
+						
+					</div>
 					</div>
 				</>
 			)}
