@@ -81,9 +81,8 @@ function CipherForm() {
 
 				
 			</form>
-
-			
-
+			<button className="move_button" type="submit">Encrypt</button>
+		
 			<button className="move_button" onClick={handleDecrypt}>Decrypt</button>
 			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
