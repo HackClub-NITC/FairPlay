@@ -5,12 +5,15 @@ import { encryptByPlayfairCipher } from "./encrypt";
 import { decryptByPlayfairCipher } from "./decrypt";
 import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
+import "../CipherForm/ChipherForm.css"; // Import the CSS file
+
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
 	const [cipherText, setCipherText] = useState("");
 	const [decryptedText, setDecryptedText] = useState("");
-	const [showEmptyCipher, setShowEmptyCipher] = useState(true);
+	// Remove unused variables
+	// const [showEmptyCipher, setShowEmptyCipher] = useState(true);
 
 	const handlePlainTextChange = (e) => {
 		setPlainText(e.target.value.replace(/\s/g, ""));
@@ -35,12 +38,13 @@ function CipherForm() {
 	};
 
 	return (
-		<div>
+		<div className="CipherForm" >
 			<form onSubmit={handleSubmit}>
-				<div>
+				<div className="Main">
 					<div>
 						<label htmlFor="plainText">Plain Text:</label>
 						<input
+							className="inputBox"
 							type="text"
 							id="plainText"
 							value={plainText}
@@ -48,7 +52,7 @@ function CipherForm() {
 						/>
 					</div>
 					<br />
-					{plainText ? ( // Conditionally render FilterInputText if plainText is not empty
+					{plainText ? (
 						<FilterInputText inputString={plainText} />
 					) : (
 						<SubstringDisplay
@@ -59,18 +63,26 @@ function CipherForm() {
 						/>
 					)}
 					<br />
-					<label htmlFor="key">Key:</label>
-					<input type="text" id="key" value={key} onChange={handleKeyChange} />
+					<div>
+						<label htmlFor="key">Key:</label>
+						<input
+							className="inputBox"
+							type="text"
+							id="key"
+							value={key}
+							onChange={handleKeyChange}
+						/>
+					</div>
 				</div>
 
 				<br />
 				<FiveFiveStatic cipherText={key} />
 				<br />
 
-				<button type="submit">Encrypt</button>
+				<button className="move_button" type="submit">Encrypt</button>
 			</form>
 
-			<button onClick={handleDecrypt}>Decrypt</button>
+			<button className="move_button" onClick={handleDecrypt}>Decrypt</button>
 			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
 			<br />
