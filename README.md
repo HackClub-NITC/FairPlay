@@ -4,7 +4,7 @@
 # FairPlay: 
 ## A Revolutionary New Way To Learn About The PlayFair Cipher
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/c402297b-2c88-4496-ba80-527a536493fc)
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/a57b6cb2-a9d6-46a3-87f7-11bae69aafec)
 
 Welcome to FairPlay, 
 
@@ -14,6 +14,7 @@ Welcome to FairPlay, your gateway to exploring the fascinating world of the Play
 
 FairPlay allows you to encrypt and decrypt based on an input string and key. It also allows the user to visualize how the cipher works. An AI powered chatbot allows the user to take to Charles Wheatstone himself allowing making it a very interactive and hands on learning experience. We also provide in depth theory and history on the cipher.
 
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/7880c79c-e5ae-498d-b939-67856c089812)
 
 ## Description
 ### Encrption and Decryption function
