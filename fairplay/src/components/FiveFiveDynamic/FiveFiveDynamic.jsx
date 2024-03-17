@@ -163,7 +163,7 @@ const FiveFiveDynamic = () => {
 			)}
 			{step === 1 && (
 				<>
-					<div>
+					<div className={style.Step_box}>
 						<br />
 						<FiveFiveStatic cipherText="" />
 						<br />
@@ -174,7 +174,7 @@ const FiveFiveDynamic = () => {
 			)}
 			{step === 2 && (
 				<>
-					<div>
+					<div className={style.Step_box}>
 						<br />
 						<FiveFiveStatic cipherText={key} />
 						<br />
