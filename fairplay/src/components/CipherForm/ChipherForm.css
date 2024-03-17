@@ -11,7 +11,7 @@
 .CipherForm{
     
 
-    background-color: rgba(89, 75, 61, 0.8);
+    background-color: transparent;
 
     display: flex;
     flex-direction: column;

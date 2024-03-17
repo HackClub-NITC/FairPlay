@@ -80,13 +80,15 @@ function CipherForm() {
 				<br />
 
 				<button className="move_button" type="submit">Encrypt</button>
-			</form>
-
-			<button className="move_button" onClick={handleDecrypt}>Decrypt</button>
+				<button className="move_button" onClick={handleDecrypt}>Decrypt</button>
 			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
 			<br />
 			{decryptedText && <div>Decrypted Text: {decryptedText}</div>}
+			
+			</form>
+
+			
 		</div>
 	);
 }
