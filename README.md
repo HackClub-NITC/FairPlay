@@ -1,71 +1,48 @@
+# FairPlay: Explore the Playfair Cipher with Ease ✨
 
+🔍 ![FairPlay](https://github.com/HackClub-NITC/FairPlay/assets/118368673/a57b6cb2-a9d6-46a3-87f7-11bae69aafec)
 
+Welcome to FairPlay! 
 
-# FairPlay: 
-## A Revolutionary New Way To Learn About The PlayFair Cipher
+🚀 FairPlay is your gateway to unraveling the mysteries of the Playfair Cipher. Developed for CodeInit 2024 by the CSEA of NIT Calicut using Vite, this React app offers an engaging and interactive platform to delve into one of cryptography's most intriguing techniques.
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/a57b6cb2-a9d6-46a3-87f7-11bae69aafec)
+---
 
-Welcome to FairPlay, 
+## Overview 📚
 
-This React app was built for CodeInit 2024, conducted by the CSEA of NIT Calicut using Vite.
+The Playfair Cipher, conceptualized by Charles Wheatstone and popularized by Lord Playfair, has intrigued cryptographers since 1854. FairPlay brings this historical cipher to life, offering encryption, decryption, visualization, and even a chatbot interface with Charles Wheatstone himself.
 
-Welcome to FairPlay, your gateway to exploring the fascinating world of the Playfair Cipher! Invented by Charles Wheatstone in 1854 and later popularized by Lord Playfair, this cryptographic technique is known for its simplicity and effectiveness in encrypting and decrypting secret messages.
+---
 
-FairPlay allows you to encrypt and decrypt based on an input string and key. It also allows the user to visualize how the cipher works. An AI powered chatbot allows the user to take to Charles Wheatstone himself allowing making it a very interactive and hands on learning experience. We also provide in depth theory and history on the cipher.
+## Features 🛠️
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/7880c79c-e5ae-498d-b939-67856c089812)
+### Encryption and Decryption 🔒 
+Encrypt and decrypt messages effortlessly using the Playfair Cipher algorithm.
 
-## Description
-### Encrption and Decryption function
-FairPlay allows users to encrypt and decrypt messages using the Playfair Cipher. Users can input their desired plaintext and key, and the app will generate the corresponding ciphertext or decrypted text. The encryption and decryption algorithms are implemented based on the principles of the Playfair Cipher, ensuring accurate and secure communication.
+### Hands-on Visualization 👀
+Visualize the encryption and decryption process step-by-step for deeper understanding.
 
-![Uploading image.png…]()
+### AI Chatbot 🤖
+Interact with Charles Wheatstone, gaining insights and historical context via natural language conversation.
 
-### Hands on visualization
-FairPlay provides a Step by Step visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
+### Detailed Information ℹ️
+Access well-documented theory, code, and additional resources for a comprehensive grasp of cryptographic principles.
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/42bdda0f-0bd3-4db2-9482-880df2f03027)
+---
 
+## Technology Stack 💻
 
-### GPT AI chatbot
-FairPlay features an AI-powered chatbot powered by GPT (Generative Pre-trained Transformer) technology. Users can interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation. The chatbot provides educational insights, answers questions, and offers guidance on using the cipher effectively. This interactive feature adds depth to the learning experience and encourages engagement with the historical context of cryptography.
+- **Frontend Frameworks:** ReactJS
+- **Backend Frameworks:** NodeJS, ViteJs 
+- **AI Engine:** OpenAI's GPT-3.5-turbo
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/ca31f025-acab-4083-910c-5e13fcdd25ad)
+---
 
+## Authors 🌟
 
-## Features
-
-### Encryption and Decryption: 
-    Encrypt and decrypt messages using the Playfair Cipher algorithm.
-
-### Hands-on Visualization:
-    Visualize the encryption and decryption process for better understanding.
-
-### AI Chatbot: 
-    Interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation.
-
-### Detailed Information: 
-    Well documented theory and code along with further resources allow for good understanding of basic cryptographic principles 
-
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/95d7a9e7-9f2c-426d-b1cf-30aa1846641e)
-
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/63f6c67f-d209-46a7-b6ff-653b50163204)
-
-
-## Tech Stack
-
-- Frontend frameworks: ReactJS
-- Backend frameworks: NodeJS, ViteJs 
-- AI Engine: OpenAI's GPT-3.5-turbo
-
-## Authors
-
-- [vinitkesh](https://github.com/vinitkesh)
-- [@arunnats](https://www.arunnats.com/)
-- [27-aditya](https://github.com/27-aditya)
-- [@harshfromnow](https://github.com/harshfromnow)
-
+- [Vinit Keshri](https://github.com/vinitkesh)
+- [Arun Nats](https://www.arunnats.com/)
+- [Aditya Kamble](https://github.com/27-aditya)
+- [Harshini](https://github.com/harshfromnow)
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
-
