@@ -57,3 +57,17 @@
 .move_button:hover {
 	background-color: #954a00; /* Darker blue on hover */
 }
+
+.outputText {
+	color: white;
+	font-size: 24px;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.radioMaybe {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 10px 0;
+}

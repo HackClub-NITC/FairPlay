@@ -8,15 +8,13 @@ import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 import "../CipherForm/ChipherForm.css"; // Import the CSS file
 
 function CipherForm() {
-	const [plainText, setPlainText] = useState("");
+	const [mode, setMode] = useState("encrypt");
+	const [inputText, setInputText] = useState("");
 	const [key, setKey] = useState("");
-	const [cipherText, setCipherText] = useState("");
-	const [decryptedText, setDecryptedText] = useState("");
-	// Remove unused variables
-	// const [showEmptyCipher, setShowEmptyCipher] = useState(true);
+	const [outputText, setOutputText] = useState("");
 
-	const handlePlainTextChange = (e) => {
-		setPlainText(e.target.value.replace(/\s/g, ""));
+	const handleInputChange = (e) => {
+		setInputText(e.target.value.replace(/\s/g, ""));
 	};
 
 	const handleKeyChange = (e) => {
@@ -25,16 +23,23 @@ function CipherForm() {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		// Encrypt the plain text
-		setCipherText(
-			encryptByPlayfairCipher(plainText.replace(/\s/g, ""), key).toUpperCase()
-		);
+		if (mode === "encrypt") {
+			setOutputText(
+				encryptByPlayfairCipher(inputText.replace(/\s/g, ""), key).toUpperCase()
+			);
+		} else {
+			setOutputText(
+				decryptByPlayfairCipher(inputText.replace(/\s/g, ""), key).toUpperCase()
+			);
+		}
 	};
 
-	const handleDecrypt = () => {
-		// Decrypt the cipher text
-		setDecryptedText(decryptByPlayfairCipher(cipherText, key).toUpperCase());
+	const handleModeChange = (newMode) => {
+		if (newMode !== mode) {
+			setInputText(""); // Reset input text when mode changes
+			setOutputText(""); // Reset output text when mode changes
+			setMode(newMode);
+		}
 	};
 
 	return (
@@ -42,27 +47,52 @@ function CipherForm() {
 			<form onSubmit={handleSubmit}>
 				<div className="flexThing">
 					<div className="Main">
+						<div className="radioMaybe">
+							<label>
+								<input
+									type="radio"
+									value="encrypt"
+									checked={mode === "encrypt"}
+									onChange={() => handleModeChange("encrypt")}
+								/>
+								Encrypt
+							</label>
+							<label>
+								<input
+									type="radio"
+									value="decrypt"
+									checked={mode === "decrypt"}
+									onChange={() => handleModeChange("decrypt")}
+								/>
+								Decrypt
+							</label>
+						</div>
 						<div>
-							<label htmlFor="plainText">Plain Text:</label>
+							<br />
+							<label htmlFor="inputText">
+								{mode === "encrypt" ? "Plain Text:" : "Encrypted Text:"}
+							</label>
 							<input
 								className="inputBox"
 								type="text"
-								id="plainText"
-								value={plainText}
-								onChange={handlePlainTextChange}
+								id="inputText"
+								value={inputText}
+								onChange={handleInputChange}
 							/>
 						</div>
 						<br />
-						{plainText ? (
-							<FilterInputText inputString={plainText} />
-						) : (
-							<SubstringDisplay
-								substrings={[]}
-								length={0}
-								first={true}
-								encrypted={false}
-							/>
-						)}
+						{mode === "encrypt" ? (
+							inputText ? (
+								<FilterInputText inputString={inputText} />
+							) : (
+								<SubstringDisplay
+									substrings={[]}
+									length={0}
+									first={true}
+									encrypted={false}
+								/>
+							)
+						) : null}
 						<br />
 						<div>
 							<label htmlFor="key">Key:</label>
@@ -80,18 +110,20 @@ function CipherForm() {
 					<FiveFiveStatic cipherText={key} />
 					<br />
 				</div>
+
 				<button className="move_button" type="submit">
-					Encrypt
-				</button>
-				<button className="move_button" onClick={handleDecrypt}>
-					Decrypt
+					{mode === "encrypt" ? "Encrypt" : "Decrypt"}
 				</button>
 			</form>
 
 			<br />
-			{cipherText && <div>Encrypted Text: {cipherText}</div>}
+			{outputText && (
+				<div className="outputText">
+					{mode === "encrypt" ? "Encrypted Text:" : "Decrypted Text:"}{" "}
+					{outputText}
+				</div>
+			)}
 			<br />
-			{decryptedText && <div>Decrypted Text: {decryptedText}</div>}
 		</div>
 	);
 }
