@@ -79,10 +79,9 @@ function CipherForm() {
 				<FiveFiveStatic cipherText={key} />
 				<br />
 
-				
+				<button className="move_button" type="submit">Encrypt</button>
 			</form>
-			<button className="move_button" type="submit">Encrypt</button>
-		
+
 			<button className="move_button" onClick={handleDecrypt}>Decrypt</button>
 			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
