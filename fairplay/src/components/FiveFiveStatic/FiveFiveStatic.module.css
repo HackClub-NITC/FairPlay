@@ -5,10 +5,9 @@
 }
 
 .box {
-
 	width: var(--size);
 	height: var(--size);
-	background-color: rgb(179, 179, 255);
+	background-color: rgba(161, 183, 171, 0.5);
 	border: 2px solid black;
   }
   

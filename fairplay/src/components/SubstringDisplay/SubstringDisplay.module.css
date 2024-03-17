@@ -2,7 +2,7 @@
 .grid_input_text {
 	display: flex;
 	flex-direction: row;
-	background: rgb(255, 124, 124);
+	background: rgb(184, 91, 91);
 	width: min-content;
 }
 
