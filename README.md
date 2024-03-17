@@ -8,7 +8,7 @@
 
 Welcome to FairPlay, 
 
-This Vite app was built for CodeInit 2024, conducted by the CSEA of NIT Calicut
+This React app was built for CodeInit 2024, conducted by the CSEA of NIT Calicut using Vite.
 
 Welcome to FairPlay, your gateway to exploring the fascinating world of the Playfair Cipher! Invented by Charles Wheatstone in 1854 and later popularized by Lord Playfair, this cryptographic technique is known for its simplicity and effectiveness in encrypting and decrypting secret messages.
 
@@ -23,7 +23,7 @@ FairPlay allows users to encrypt and decrypt messages using the Playfair Cipher.
 ![Uploading image.png…]()
 
 ### Hands on visualization
-FairPlay provides a visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
+FairPlay provides a Step by Step visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
 
 ![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/42bdda0f-0bd3-4db2-9482-880df2f03027)
 
@@ -36,13 +36,17 @@ FairPlay features an AI-powered chatbot powered by GPT (Generative Pre-trained T
 
 ## Features
 
-- Encryption and Decryption: Encrypt and decrypt messages using the Playfair Cipher algorithm.
+### Encryption and Decryption: 
+    Encrypt and decrypt messages using the Playfair Cipher algorithm.
 
-- Hands-on Visualization: Visualize the encryption and decryption process for better understanding.
+### Hands-on Visualization:
+    Visualize the encryption and decryption process for better understanding.
 
-- AI Chatbot: Interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation.
+### AI Chatbot: 
+    Interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation.
 
-- Detailed Information: Well documented theory and code along with further resources allow for good understanding of basic cryptographic principles 
+### Detailed Information: 
+    Well documented theory and code along with further resources allow for good understanding of basic cryptographic principles 
 
 ![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/95d7a9e7-9f2c-426d-b1cf-30aa1846641e)
 
