@@ -92,7 +92,7 @@ const FiveFiveHighlight = ({
 								? "I/J"
 								: modifiedCipherText[currentIndex];
 						const highlightStyle = {
-							backgroundColor: isInBox(i, j) ? "yellow" : "",
+							backgroundColor: isInBox(i, j) ? "rgba(202, 160, 85,0.7)" : "",
 							animation: isInBox(i, j) ? "pulse 1s infinite" : "",
 						};
 
@@ -100,7 +100,7 @@ const FiveFiveHighlight = ({
 							(charOneOp && currentChar === charOneOp) ||
 							(charTwoOp && currentChar === charTwoOp)
 						) {
-							highlightStyle.backgroundColor = "red";
+							highlightStyle.backgroundColor = "rgba(43, 36, 26,0.5)";
 						}
 
 						return (

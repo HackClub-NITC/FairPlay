@@ -5,7 +5,7 @@
 .box {
 	width: var(--size);
 	height: var(--size);
-	background-color: rgb(179, 179, 255);
+	background-color: rgba(161, 183, 171, 0.5);
 	border: 2px solid black;
 
 	display: flex;
@@ -30,5 +30,5 @@
 }
 
 .highlight {
-	background-color: yellow; /* Change highlight color as needed */
+	background-color: rgba(202, 160, 85,0.5); /* Change highlight color as needed */
 }
