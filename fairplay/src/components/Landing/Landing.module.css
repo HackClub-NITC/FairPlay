@@ -6,6 +6,11 @@
 	width: 18vw;
 }
 
+.title {
+	width: 44vw;
+	margin: auto;
+}
+
 .detective {
 	position: fixed;
 	bottom: 0;
@@ -18,14 +23,12 @@
 	position: absolute;
 	top: 0;
 	margin: 0;
-	width: 100vw;
+	width: 100%;
 	background-color: antiquewhite;
-	height: 100vh;
 	display: flex;
-	justify-content: centerk;
-
+	flex-direction: column;
+	justify-content: center;
 	background-image: url(./assets/paperbg.png);
 	background-size: cover;
-
-	/* z-index: -999; */
+	background-attachment: fixed; /* Make the background image fixed */
 }
