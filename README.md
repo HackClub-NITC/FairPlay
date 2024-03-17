@@ -4,6 +4,8 @@
 # FairPlay: 
 ## A Revolutionary New Way To Learn About The PlayFair Cipher
 
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/c402297b-2c88-4496-ba80-527a536493fc)
+
 Welcome to FairPlay, 
 
 This Vite app was built for CodeInit 2024, conducted by the CSEA of NIT Calicut
@@ -16,6 +18,10 @@ FairPlay allows you to encrypt and decrypt based on an input string and key. It 
 ## Description
 ### Encrption and Decryption function
 FairPlay allows users to encrypt and decrypt messages using the Playfair Cipher. Users can input their desired plaintext and key, and the app will generate the corresponding ciphertext or decrypted text. The encryption and decryption algorithms are implemented based on the principles of the Playfair Cipher, ensuring accurate and secure communication.
+
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/5bab8778-7434-49a1-871e-b6aeb7b18225)
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/d60450ba-e00e-4877-88ff-44442bc2da61)
+
 
 ### Hands on visualization
 FairPlay provides a visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
