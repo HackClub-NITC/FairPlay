@@ -9,6 +9,7 @@ import title_t from "./assets/title_t.png";
 import Radio from "../Radio/Radio";
 import FiveFiveDynamic from "../FiveFiveDynamic/FiveFiveDynamic";
 import ChatbotButton from "../ChatBox/ChatBotButton";
+import CipherForm from "../CipherForm/CipherForm";
 
 const Landing = () => {
 	return (
@@ -17,6 +18,8 @@ const Landing = () => {
 			<br />
 			<img src={rome} alt="rome" className={styles.rome} />
 			<img src={detective} alt="detective" className={styles.detective} />
+			<br />
+			<CipherForm />
 			<br />
 
 			<FiveFiveDynamic />
