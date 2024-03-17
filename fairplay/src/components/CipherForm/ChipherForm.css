@@ -4,13 +4,19 @@
     border: 1px solid #bca1a1;
     border-radius: 5px;
     background-color: rgba(89, 75, 61, 0.8);
+
+    width: fit-content;
 }
 
 .CipherForm{
     
-    
 
     background-color: rgba(89, 75, 61, 0.8);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: top;
 
 }
 
