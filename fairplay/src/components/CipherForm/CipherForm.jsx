@@ -5,6 +5,8 @@ import { encryptByPlayfairCipher } from "./encrypt";
 import { decryptByPlayfairCipher } from "./decrypt";
 import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
+import style from "./CipherForm.module.css";
+
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
@@ -35,7 +37,7 @@ function CipherForm() {
 	};
 
 	return (
-		<div>
+		<div className={style.CipherForm}>
 			<form onSubmit={handleSubmit}>
 				<div>
 					<div>
@@ -72,7 +74,7 @@ function CipherForm() {
 
 			<button onClick={handleDecrypt}>Decrypt</button>
 			<br />
-			{cipherText && <div>Encrypted Text: {cipherText}</div>}
+			{cipherText && <div class="">Encrypted Text: {cipherText}</div>}
 			<br />
 			{decryptedText && <div>Decrypted Text: {decryptedText}</div>}
 		</div>

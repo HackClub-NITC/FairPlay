@@ -1,6 +1,6 @@
 :root {
 	--size: 7vw;
-	--textsize: 6vh;
+	--textsize: 3vw;
 }
 
 .box {
@@ -16,7 +16,7 @@
 }
 
 .box p{
-
+	font-size: var(--textsize);
 }
 
 .box:hover {

@@ -2,6 +2,7 @@
 
 :root {
 	--size: 10vw;
+	--textsize: 6vh;
 }
 
 .box {
@@ -13,6 +14,10 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+  }
+
+  .box{
+	font-size: var(--textsize);
   }
   
   .box:hover {
