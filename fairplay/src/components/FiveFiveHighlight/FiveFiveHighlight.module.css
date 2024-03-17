@@ -1,5 +1,5 @@
 :root {
-	--size: 80px;
+	--size: 7vw;
 }
 
 .box {
@@ -7,6 +7,11 @@
 	height: var(--size);
 	background-color: rgba(161, 183, 171, 0.5);
 	border: 2px solid black;
+
+	display: flex;
+
+	justify-content: center;
+	align-items: center;
 }
 
 .box:hover {

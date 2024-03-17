@@ -1,7 +1,7 @@
 /* FiveFiveStatic.module.css */
 
 :root {
-	--size: 80px;
+	--size: 10vw;
 }
 
 .box {
@@ -9,6 +9,10 @@
 	height: var(--size);
 	background-color: rgba(161, 183, 171, 0.5);
 	border: 2px solid black;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
   }
   
   .box:hover {
@@ -24,6 +28,8 @@
   .row {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+	justify-content: center;
   }
   
   .x {

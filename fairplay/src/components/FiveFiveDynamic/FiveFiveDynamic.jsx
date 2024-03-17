@@ -7,7 +7,7 @@ import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
 import { encryptByPlayfairCipher } from "./encrypt"; // Import the encryption function
 import style from "./FiveFiveDynamic.module.css";
-import './FiveFiveDynamic.module.css';
+import "./FiveFiveDynamic.module.css";
 
 const FiveFiveDynamic = () => {
 	const [step, setStep] = useState(0);
@@ -19,6 +19,7 @@ const FiveFiveDynamic = () => {
 	const [flag, setFlag] = useState(1); // Initialize flag with 1
 	const [isPlaying, setIsPlaying] = useState(false); // State to track play/pause
 	const timerRef = useRef(null); // Reference to the timer
+	const additionalDataParagraphRef = useRef(null);
 
 	// Function to handle the input string change
 	const handleInputChange = (e) => {
@@ -123,7 +124,8 @@ const FiveFiveDynamic = () => {
 		<div className={style.FiveFiveDynamic}>
 			<div className={style.inputbox}>
 				<label htmlFor="inputString">Input String:</label>
-				<input className={style.inputBox}
+				<input
+					className={style.inputBox}
 					type="text"
 					id="inputString"
 					value={inputString}
@@ -131,7 +133,8 @@ const FiveFiveDynamic = () => {
 				/>
 
 				<label htmlFor="key">Key:</label>
-				<input className={style.inputBox}
+				<input
+					className={style.inputBox}
 					type="text"
 					id="key"
 					value={key}
@@ -139,97 +142,103 @@ const FiveFiveDynamic = () => {
 				/>
 
 				<div className={style.button_div}>
-
-					<button className = {style.move_button}onClick={handleBackClick}>Back</button>
+					<button className={style.move_button} onClick={handleBackClick}>
+						Back
+					</button>
 					{/* <button className = {style.move_button}onClick={handlePlayToggle}>{isPlaying ? "Pause" : "Play"}</button> */}
-					<button className = {style.move_button} onClick={handleNextClick}>Next</button>
-
-					<button className = {style.move_button} onClick={handleResetClick}>Reset</button>{" "}
+					<button className={style.move_button} onClick={handleNextClick}>
+						Next
+					</button>
+					<button className={style.move_button} onClick={handleResetClick}>
+						Reset
+					</button>{" "}
 					{/* Added reset button */}
-
 				</div>
-
+				{/* Box with paragraph tag */}
+				<br />
+				<div className={style.additionalBox}>
+					<p
+						id="additionalDataParagraph"
+						className={style.additionalDataParagraph}
+					>
+						Enter a Key and the Text to be Encrypted. Click Next to continue.
+					</p>
+				</div>
 			</div>
 
 			{step === 0 && (
 				<>
-					<div><br />
+					<div>
+						<br />
 						<FiveFiveStatic cipherText="" />
 						<br />
 						<FilterInputText inputString={modifiedCipherText} />
 					</div>
-					
 				</>
 			)}
 			{step === 1 && (
 				<>
-					<div>
+					<div className={style.Step_box}>
 						<br />
 						<FiveFiveStatic cipherText="" />
 						<br />
 						<FilterInputText inputString={modifiedCipherText} />
 					</div>
-					
 				</>
 			)}
 			{step === 2 && (
 				<>
-					<div>
+					<div className={style.Step_box}>
 						<br />
 						<FiveFiveStatic cipherText={key} />
 						<br />
 						<FilterInputText inputString={modifiedCipherText} />
 					</div>
-					
 				</>
 			)}
 			{step > 2 && step <= 2 + 2 * substrings.length && (
 				<>
-
-				<div className={style.Step_box}>
-
-					<br />
-					<div>
-					{flag === -1 && (
-							<FiveFiveHighlight
-								cipherText={key}
-								charOne={substrings[Math.floor((step - 3) / 2)][0]}
-								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-							/>
-						)}
-						{flag === 1 && (
-							<FiveFiveHighlight
-								cipherText={key}
-								charOne={substrings[Math.floor((step - 3) / 2)][0]}
-								charTwo={substrings[Math.floor((step - 3) / 2)][1]}
-								charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
-								charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
-							/>
-						)}
+					<div className={style.Step_box}>
 						<br />
-						<SubstringDisplay
-							substrings={substrings}
-							length={substrings.length}
-							first={false}
-							encrypted={false} // Indicate that these substrings are not encrypted
-						/>
-						<br />
-						<SubstringDisplay
-							substrings={encryptedSubstrings.slice(
-								0,
-								Math.floor((step - 1) / 2)
+						<div>
+							{flag === -1 && (
+								<FiveFiveHighlight
+									cipherText={key}
+									charOne={substrings[Math.floor((step - 3) / 2)][0]}
+									charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+								/>
 							)}
-							length={encryptedSubstrings.length}
-							first={false}
-							encrypted={true} // Indicate that these substrings are encrypted
-						/>
-						<br />
-						
-					</div>
+							{flag === 1 && (
+								<FiveFiveHighlight
+									cipherText={key}
+									charOne={substrings[Math.floor((step - 3) / 2)][0]}
+									charTwo={substrings[Math.floor((step - 3) / 2)][1]}
+									charOneOp={encryptedSubstrings[Math.floor((step - 3) / 2)][0]}
+									charTwoOp={encryptedSubstrings[Math.floor((step - 3) / 2)][1]}
+								/>
+							)}
+							<br />
+							<SubstringDisplay
+								substrings={substrings}
+								length={substrings.length}
+								first={false}
+								encrypted={false} // Indicate that these substrings are not encrypted
+							/>
+							<br />
+							<SubstringDisplay
+								substrings={encryptedSubstrings.slice(
+									0,
+									Math.floor((step - 1) / 2)
+								)}
+								length={encryptedSubstrings.length}
+								first={false}
+								encrypted={true} // Indicate that these substrings are encrypted
+							/>
+							<br />
+						</div>
 					</div>
 				</>
 			)}
-			
 		</div>
 	);
 };

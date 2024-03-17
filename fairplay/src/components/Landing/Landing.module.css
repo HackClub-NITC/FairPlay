@@ -11,6 +11,12 @@
 	margin: auto;
 }
 
+.titleText {
+	font-size: 2vw;
+	margin: auto;
+	color: black;
+}
+
 .detective {
 	position: fixed;
 	bottom: 0;
@@ -31,4 +37,7 @@
 	background-image: url(./assets/paperbg.png);
 	background-size: cover;
 	background-attachment: fixed; /* Make the background image fixed */
+
+	overflow-x: hidden;
+
 }
