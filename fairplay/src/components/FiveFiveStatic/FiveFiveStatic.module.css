@@ -16,43 +16,42 @@
 	justify-content: center;
 	align-items: center;
 
-	font-size: var(--size2);
-  }
-  
-  .box:hover {
+	font-size: 30px;
+}
+
+.box:hover {
+
 	scale: 1.1;
 	transition: ease 0.3s;
-  }
-  
-  /* Add styles for animate__pulse class */
-  .animate__pulse {
+}
+
+/* Add styles for animate__pulse class */
+.animate__pulse {
 	animation: anpulse 1s infinite; /* Adjust animation duration and other properties as needed */
-  }
-  
-  .row {
+}
+
+.row {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: center;
-  }
-  
-  .x {
+}
+
+.x {
 	background-color: yellow; /* Change background color to yellow */
 	font-weight: bold; /* Make text bold */
 	/* Add any other styling you want */
 	animation: pulse 1s ease 0.3s 3 linear infinite;
-  }
-  
-  @keyframes pulse {
+}
+
+@keyframes pulse {
 	0% {
-	  transform: scale(1);
+		transform: scale(1);
 	}
 	50% {
-	  transform: scale(1.1);
+		transform: scale(1.1);
 	}
 	100% {
-	  transform: scale(1);
+		transform: scale(1);
 	}
-  }
-  
-
+}

@@ -2,6 +2,7 @@
 
 body {
 	font-family: "Frank Ruhl Libre", sans-serif;
+	color: #4d270a;
 }
 
 .chatbotInputForm input::placeholder {

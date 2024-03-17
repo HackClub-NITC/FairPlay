@@ -2,4 +2,12 @@
 	color: black;
 	width: 80%;
 	margin: auto;
+	background-color: rgba(
+		89,
+		75,
+		61,
+		0.8
+	); /* White background with decreased opacity */
+	border-radius: 10px; /* Rounded corners */
+	padding: 30px; /* Add padding */
 }
