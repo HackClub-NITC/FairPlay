@@ -111,10 +111,12 @@ function CipherForm() {
 					<br />
 				</div>
 
+
 				<button className="move_button" type="submit">
 					{mode === "encrypt" ? "Encrypt" : "Decrypt"}
 				</button>
 			</form>
+
 
 			<br />
 			{outputText && (
@@ -124,6 +126,7 @@ function CipherForm() {
 				</div>
 			)}
 			<br />
+
 		</div>
 	);
 }
