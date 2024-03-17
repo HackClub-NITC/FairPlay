@@ -19,8 +19,7 @@ FairPlay allows you to encrypt and decrypt based on an input string and key. It 
 ### Encrption and Decryption function
 FairPlay allows users to encrypt and decrypt messages using the Playfair Cipher. Users can input their desired plaintext and key, and the app will generate the corresponding ciphertext or decrypted text. The encryption and decryption algorithms are implemented based on the principles of the Playfair Cipher, ensuring accurate and secure communication.
 
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/d60450ba-e00e-4877-88ff-44442bc2da61)
-![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/5bab8778-7434-49a1-871e-b6aeb7b18225)
+![Uploading image.png…]()
 
 ### Hands on visualization
 FairPlay provides a visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
