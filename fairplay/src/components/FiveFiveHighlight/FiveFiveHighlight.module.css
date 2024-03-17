@@ -15,8 +15,8 @@
 	align-items: center;
 }
 
-.box p{
-
+.box p {
+	font-size: 30px;
 }
 
 .box:hover {
@@ -32,9 +32,13 @@
 .row {
 	display: flex;
 	flex-direction: row;
-
 }
 
 .highlight {
-	background-color: rgba(202, 160, 85,0.5); /* Change highlight color as needed */
+	background-color: rgba(
+		202,
+		160,
+		85,
+		0.5
+	); /* Change highlight color as needed */
 }

@@ -16,7 +16,7 @@ const Chatbot = () => {
 		const apiEndpoint = "https://api.openai.com/v1/chat/completions";
 		const headers = {
 			"Content-Type": "application/json",
-			Authorization: ` Bearer ${config.OPENAI_API_KEY}`,
+			Authorization: ` Bearer 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`,
 		};
 
 		// Get the last 10 messages

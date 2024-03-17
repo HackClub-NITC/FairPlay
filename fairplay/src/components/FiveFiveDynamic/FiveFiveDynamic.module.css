@@ -27,18 +27,15 @@
 	padding: 0;
 	margin: 0;
 	transition: all 0.3s ease;
-
-	border: 2px solid #000;
 }
 
 .inputbox {
-
-    /* Container styles */
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #bca1a1;
-    border-radius: 5px;
-    background-color: rgba(89, 75, 61,0.8);
+	/* Container styles */
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #bca1a1;
+	border-radius: 5px;
+	background-color: rgba(89, 75, 61, 0.8);
 }
 
 .inputbox label {
@@ -89,17 +86,15 @@
 }
 
 .move_button {
-
-    /* Button styles */
-    padding: 10px 20px;
-    margin: 0 10px; /* Add space between buttons */
-    background-color: rgba(210, 183, 150,0.7); /* Blue color */
-    color: #fff; /* White text color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
+	/* Button styles */
+	padding: 10px 20px;
+	margin: 0 10px; /* Add space between buttons */
+	background-color: rgba(210, 183, 150, 0.7); /* Blue color */
+	color: #fff; /* White text color */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .move_button:hover {

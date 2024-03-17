@@ -5,15 +5,12 @@ import { encryptByPlayfairCipher } from "./encrypt";
 import { decryptByPlayfairCipher } from "./decrypt";
 import SubstringDisplay from "../SubstringDisplay/SubstringDisplay";
 
-import "../CipherForm/ChipherForm.css"; // Import the CSS file
-
 function CipherForm() {
 	const [plainText, setPlainText] = useState("");
 	const [key, setKey] = useState("");
 	const [cipherText, setCipherText] = useState("");
 	const [decryptedText, setDecryptedText] = useState("");
-	// Remove unused variables
-	// const [showEmptyCipher, setShowEmptyCipher] = useState(true);
+	const [showEmptyCipher, setShowEmptyCipher] = useState(true);
 
 	const handlePlainTextChange = (e) => {
 		setPlainText(e.target.value.replace(/\s/g, ""));
@@ -38,56 +35,42 @@ function CipherForm() {
 	};
 
 	return (
-		<div className="CipherForm">
+		<div>
 			<form onSubmit={handleSubmit}>
-				<div className="flexThing">
-					<div className="Main">
-						<div>
-							<label htmlFor="plainText">Plain Text:</label>
-							<input
-								className="inputBox"
-								type="text"
-								id="plainText"
-								value={plainText}
-								onChange={handlePlainTextChange}
-							/>
-						</div>
-						<br />
-						{plainText ? (
-							<FilterInputText inputString={plainText} />
-						) : (
-							<SubstringDisplay
-								substrings={[]}
-								length={0}
-								first={true}
-								encrypted={false}
-							/>
-						)}
-						<br />
-						<div>
-							<label htmlFor="key">Key:</label>
-							<input
-								className="inputBox"
-								type="text"
-								id="key"
-								value={key}
-								onChange={handleKeyChange}
-							/>
-						</div>
+				<div>
+					<div>
+						<label htmlFor="plainText">Plain Text:</label>
+						<input
+							type="text"
+							id="plainText"
+							value={plainText}
+							onChange={handlePlainTextChange}
+						/>
 					</div>
-
 					<br />
-					<FiveFiveStatic cipherText={key} />
+					{plainText ? ( // Conditionally render FilterInputText if plainText is not empty
+						<FilterInputText inputString={plainText} />
+					) : (
+						<SubstringDisplay
+							substrings={[]}
+							length={0}
+							first={true}
+							encrypted={false}
+						/>
+					)}
 					<br />
+					<label htmlFor="key">Key:</label>
+					<input type="text" id="key" value={key} onChange={handleKeyChange} />
 				</div>
-				<button className="move_button" type="submit">
-					Encrypt
-				</button>
-				<button className="move_button" onClick={handleDecrypt}>
-					Decrypt
-				</button>
+
+				<br />
+				<FiveFiveStatic cipherText={key} />
+				<br />
+
+				<button type="submit">Encrypt</button>
 			</form>
 
+			<button onClick={handleDecrypt}>Decrypt</button>
 			<br />
 			{cipherText && <div>Encrypted Text: {cipherText}</div>}
 			<br />
