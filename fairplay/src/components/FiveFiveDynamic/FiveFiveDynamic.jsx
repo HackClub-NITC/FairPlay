@@ -153,6 +153,14 @@ const FiveFiveDynamic = () => {
 					</button>{" "}
 					{/* Added reset button */}
 				</div>
+				{/* Box with paragraph tag */}
+				<br />
+				<div className={style.additionalBox}>
+					<p
+						id="additionalDataParagraph"
+						className={style.additionalDataParagraph}
+					></p>
+				</div>
 			</div>
 
 			{step === 0 && (

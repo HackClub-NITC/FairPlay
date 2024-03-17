@@ -8,7 +8,10 @@ function App() {
 	return (
 		<div className="App">
 			<Landing />
+<<<<<<< Updated upstream
 			<FiveFiveDynamic />
+=======
+>>>>>>> Stashed changes
 		</div>
 	);
 }

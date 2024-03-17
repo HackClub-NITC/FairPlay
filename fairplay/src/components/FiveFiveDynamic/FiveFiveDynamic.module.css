@@ -1,111 +1,114 @@
-#inputString{
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    border: none;
-    outline: none;
-    font-size: 1.5rem;
-    font-weight: 500;
-    color: #000;
-    background-color: transparent;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-   
+#inputString {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	border: none;
+	outline: none;
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: #000;
+	background-color: transparent;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
 }
-#inputString:focus{
-    border: 2px solid #000;
+#inputString:focus {
+	border: 2px solid #000;
 }
 
-.FiveFiveDynamic{
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    transition: all 0.3s ease;
+.FiveFiveDynamic {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	transition: all 0.3s ease;
 
-    border: 2px solid #000;
+	border: 2px solid #000;
 }
 
 .inputbox {
-    /* Container styles */
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+	/* Container styles */
+	margin: 20px;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
 }
 
 .inputbox label {
-    /* Label styles */
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
+	/* Label styles */
+	display: block;
+	margin-bottom: 10px;
+	font-weight: bold;
 }
 
-
 .inputBox {
-    /* Basic Input Styles */
-    border: 1px solid #888;
-    border-radius: 4px;
-    padding: 8px;
-    font-size: 16px; /* Adjust font size as needed */
-    font-family: 'Times New Roman', Times, serif; /* Choose a vintage font */
-    background-color: #f9f9f9; /* Background color */
-    color: #333; /* Text color */
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Inner shadow */
+	/* Basic Input Styles */
+	border: 1px solid #888;
+	border-radius: 4px;
+	padding: 8px;
+	font-size: 16px; /* Adjust font size as needed */
+	font-family: "Times New Roman", Times, serif; /* Choose a vintage font */
+	background-color: #f9f9f9; /* Background color */
+	color: #333; /* Text color */
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Inner shadow */
 
-    /* 1800s Vintage Style */
-    border-width: 2px; /* Thicker border */
-    background-color: #f2e5d7; /* Light beige background */
-    color: #4e4e4e; /* Darker text color */
-    font-size: 18px; /* Larger font size */
-    font-weight: bold; /* Bold text */
-    padding: 10px 12px; /* More padding */
-    text-align: center; /* Center text */
+	/* 1800s Vintage Style */
+	border-width: 2px; /* Thicker border */
+	background-color: #f2e5d7; /* Light beige background */
+	color: #4e4e4e; /* Darker text color */
+	font-size: 18px; /* Larger font size */
+	font-weight: bold; /* Bold text */
+	padding: 10px 12px; /* More padding */
+	text-align: center; /* Center text */
 }
 
 /* Optional: Add additional styles for focus and hover effects */
 .inputBox:focus {
-    outline: none;
-    border-color: #666;
-    box-shadow: 0 0 3px #666;
+	outline: none;
+	border-color: #666;
+	box-shadow: 0 0 3px #666;
 }
 
 .inputBox:hover {
-    background-color: #e2d4c6; /* Lighter background color on hover */
+	background-color: #e2d4c6; /* Lighter background color on hover */
 }
 
 .button_div {
-    /* Container styles */
-    display: flex;
-    justify-content: center; /* Center align buttons horizontally */
-    margin-top: 20px; /* Adjust margin as needed */
+	/* Container styles */
+	display: flex;
+	justify-content: center; /* Center align buttons horizontally */
+	margin-top: 20px; /* Adjust margin as needed */
 }
 
 .move_button {
-    /* Button styles */
-    padding: 10px 20px;
-    margin: 0 10px; /* Add space between buttons */
-    background-color: #b19001; /* Blue color */
-    color: #fff; /* White text color */
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+	/* Button styles */
+	padding: 10px 20px;
+	margin: 0 10px; /* Add space between buttons */
+	background-color: #b19001; /* Blue color */
+	color: #fff; /* White text color */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
 }
 
 .move_button:hover {
-    background-color: #954a00; /* Darker blue on hover */
+	background-color: #954a00; /* Darker blue on hover */
 }
 
- .Step_box{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
- }
+.Step_box {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+}
+
+.additionalDataParagraph {
+	color: black; /* Set the color to black */
+	font-size: 1.5rem; /* Set the font size to 1.5rem */
+}
