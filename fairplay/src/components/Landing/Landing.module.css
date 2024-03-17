@@ -31,4 +31,7 @@
 	background-image: url(./assets/paperbg.png);
 	background-size: cover;
 	background-attachment: fixed; /* Make the background image fixed */
+
+	overflow-x: hidden;
+
 }
