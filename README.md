@@ -20,8 +20,14 @@ FairPlay allows users to encrypt and decrypt messages using the Playfair Cipher.
 ### Hands on visualization
 FairPlay provides a visual representation of how the Playfair Cipher operates. Users can observe the transformation of plaintext into ciphertext and vice versa, gaining insight into the substitution and transposition techniques employed by the cipher. The visualization enhances understanding and facilitates hands-on learning.
 
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/42bdda0f-0bd3-4db2-9482-880df2f03027)
+
+
 ### GPT AI chatbot
 FairPlay features an AI-powered chatbot powered by GPT (Generative Pre-trained Transformer) technology. Users can interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation. The chatbot provides educational insights, answers questions, and offers guidance on using the cipher effectively. This interactive feature adds depth to the learning experience and encourages engagement with the historical context of cryptography.
+
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/ca31f025-acab-4083-910c-5e13fcdd25ad)
+
 
 ## Features
 
@@ -32,6 +38,11 @@ FairPlay features an AI-powered chatbot powered by GPT (Generative Pre-trained T
 - AI Chatbot: Interact with Charles Wheatstone, the inventor of the Playfair Cipher, through natural language conversation.
 
 - Detailed Information: Well documented theory and code along with further resources allow for good understanding of basic cryptographic principles 
+
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/95d7a9e7-9f2c-426d-b1cf-30aa1846641e)
+
+![image](https://github.com/HackClub-NITC/FairPlay/assets/118368673/63f6c67f-d209-46a7-b6ff-653b50163204)
+
 
 ## Tech Stack
 
